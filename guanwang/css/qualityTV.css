@@ -1,0 +1,74 @@
+@charset "utf-8";
+body,html{height: auto;width: 100%;}
+.pull-right{float: right;}
+.pull-left{float: left;}
+#box1{width: 10.8rem;margin: 0 auto;display: none;}
+#box{height: 100%;display: -webkit-box;-webkit-box-orient: vertical;}
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+/*头部区*/
+.quality-head{height: 1.21rem;background: #111111;position: fixed;top: 0;overflow: hidden;z-index: 999;width: 10.8rem;}
+.quality-head h2{text-align: center; color: #ffffff;padding: 0.37rem 0;font-size: 0.46rem;font-weight: normal;}
+/*内容区*/
+.quality-content{-webkit-box-flex: 1;margin-top: 1.21rem;background: #262628;height: auto;width: 10.8rem;}
+.quality-top{background: #262628;text-align: center;padding-bottom: 0.60rem;}
+.quality-top img{padding-top: 0.40rem;width: 2rem;border-radius: 50%;}
+.quality-top p:nth-of-type(1){color: #FFFFFF;padding-top: 0.30rem;font-size: 0.30rem;}
+.quality-top p:nth-of-type(2){color: #a0a0a0;padding-top: 0.20rem;font-size: 0.30rem;}
+.quality-cont{position: relative;}
+.quality-cont img{width: 10.8rem;}
+.quality-cont i{position: absolute;left: 4.34rem;top: 1.64rem;}
+.quality-cont i:nth-of-type(1){color: #fff;font-size: 2.12rem;opacity: 0.5;display: none;}
+.quality-cont i:nth-of-type(2){color: #fff;font-size: 2.12rem;opacity: 0.2;}
+.quality-cont-head{border-bottom: 1px solid #5d5d5f;background: #262628;}
+.quality-cont-head p{color: #ffffff;padding-left: 0.54rem;}
+.quality-cont-head p:nth-of-type(1){font-weight: bold;padding-top: 0.34rem;font-size: 0.4rem;}
+.quality-cont-head p:nth-of-type(2){padding: 0.26rem 0 0.60rem 0.54rem;font-size: 0.30rem;}
+.quality-cont-foot{padding: 0.28rem 0.33rem 0.21rem 0.34rem;border-bottom: 1px solid #5d5d5f;background: #262628;line-height: 0.54rem;color: #98989a;font-size: 0.30rem;}
+
+/*精彩视频推荐*/
+.quality-recommended{padding: 0.51rem 0 0rem 0.54rem;background: #262628;}
+.quality-recommended-title{padding-bottom: 0.75rem;}
+.quality-recommended-title p{float: left;}
+.quality-recommended-title p:nth-of-type(1){width: 0.18rem;height: 0.50rem;background: #c30d23;}
+.quality-recommended-title p:nth-of-type(2){font-size: 0.30rem;color: #ffffff;padding-left: 0.17rem;padding-top: 0.08rem;}
+.quality-recommended-first{}
+.quality-recommended-first img{float: left;padding-bottom: 0.46rem;width: 3rem;}
+.quality-recommended-detail{float: left;border-bottom: 1px solid #5d5d5f;margin-left: 0.35rem;width:6.80rem;}
+.quality-recommended-detail p{color: #ffffff;}
+.quality-recommended-detail p:nth-of-type(1){font-size: 0.38rem;font-weight: bold;padding-top: 0.20rem;}
+.quality-recommended-detail p:nth-of-type(2){font-size: 0.28rem;padding: 0.32rem 0 0.4rem 0;}
+.quality-recommended-second{padding-top: 0.36rem;}
+.quality-recommended-second img{float: left;width: 3rem;}
+.quality-recommended-detail2{float: left;margin-left: 0.35rem;}
+.quality-recommended-detail2 p{color: #ffffff;}
+.quality-recommended-detail2 p:nth-of-type(1){font-size: 0.38rem;font-weight: bold;padding-top: 0.20rem;}
+.quality-recommended-detail2 p:nth-of-type(2){font-size: 0.28rem;padding-top: 0.32rem;}
+.quality-recommended-more{background: #262628;padding: 0.30rem;}
+.quality-recommended-more p{text-align: center;padding: 0.24rem 0;border-radius: 0.12rem;background: #3d3c41;color:#fff;font-size: 0.26rem;}
+/*热门评论*/
+
+/*扫码区*/
+.quality-code{background: #262628;padding-bottom: 0.56rem;text-align: center;}
+ .quality-code-img{padding: 1.06rem 0 0 0;width: 2rem;}
+.quality-code-p{color: #ffffff;padding: 0.80rem 0 0 0;font-size: 0.4rem;}
+.quality-code-middle{background: #262628;position: relative;margin-top:0.80rem ;}
+.quality-code-middle h2{text-align: center;padding: 0 0.10rem;color: #a0a0a2;font-weight: normal;font-size: 0.3rem;}
+.quality-code-middle div{position:absolute;width: 0.62rem;top:0.20rem;height: 0.20rem;background: url(../img/line.png) repeat-x;}
+.quality-code-middle div:nth-of-type(1){left: 4.48rem;}
+.quality-code-middle div:nth-of-type(2){right: 4.48rem;}
+.quality-code-phone{padding:0.48rem 0 0 1.98rem;}
+.quality-code-phone img{float: left;width: 3rem;}
+.quality-code-phone img:nth-of-type(1){padding-right: 0.34rem;}
+.quality-code-p2{color: #ffffff;padding: 0.50rem 0 0 0;font-size: 0.4rem;}
+.quality-code-foot{position: relative;}
+.quality-code-foot img{height: 1.92rem;width: 10.8rem;}
+.quality-code-foot p{font-size:0.28rem;position: absolute;right: 0.35rem;top: 0.56rem;color: #fff;width: 2.14rem;background: #c30d23;text-align: center;padding: 0.27rem 0;}
+
+
+
+
+
+
+
+

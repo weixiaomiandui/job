@@ -1,0 +1,213 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>hi+5视频</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/today.css"/>
+	<link rel="shortcut icon" href="../img/favicon.ico">
+	<script src="js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<script type="text/javascript" src="js/remn.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+    <script type="text/javascript">
+			$(window).load(function() {
+				$('#box1').delay(350).fadeIn()
+			})
+		</script>
+</head>
+<body>
+  <div id="box1">
+		<header class="today-head clear">
+			<div class="today-head-img"></div>
+			<p>高清视频分享平台</p>
+			<p class="icon downloadapp">立即下载</p>
+		</header>
+		 <section class="today-content">
+			<div class="today-cont" id="scroller">
+				<ul id="thelist">
+					<li class="today-top">
+						<div class="today-top-head">
+							<div></div>
+						    <h2>today</h2>
+						    <div></div>
+						</div>
+						<ul class="today-top-today">
+						</ul>
+				   </li>
+				   
+				</ul>
+		   </div>
+		   <div class="foot downloadapp">
+		   	 <p>点击观看更多精彩视频</p>
+		   </div>
+		  <!-- <div class="footer">
+		   	  <div class="footer-top">
+		   	  	 - 下载安装hi+5 APP,看更多精彩视频 -
+		   	  </div>
+		   	  <div class="footer-img">
+		   	  </div>
+		   	  <div class="footer-phone clear">
+				<img class="downloadapp" src="img/ios.png"/>
+				<img class="downloadapp" src="img/android.png"/>
+			</div>
+		   </div>-->
+		 </section>
+	</div>
+</body>
+<script type="text/javascript">
+   
+        /*第一天*/
+        $.ajax({
+            type: 'POST',
+            url: 'http://www.hiplus5.com/HJF/user/get_all_daily_video_list.do',
+            dataType: 'JSON',
+            success: function(data){
+            	if(data.result=="1")
+            	{
+            		 /*第一天*/
+	            	$.each(data.data.daily_list[0].video_list, function(index) {
+	            		if(data.data.daily_list[0].video_list[index].channel_name=='')
+	            		{
+	            			var oDiv2=$('<li class="today-top-content"><a class="today-mask" href="html/video.html?video_id='+data.data.daily_list[0].video_list[index].video_id+'"></a>'+
+									  '<img src="'+data.data.daily_list[0].video_list[index].video_img_url+'"/>'+
+									  '<p>'+data.data.daily_list[0].video_list[index].video_title+'</p>'+
+									  '<p>'+data.data.daily_list[0].video_list[index].video_label_name+' / '+data.data.daily_list[0].video_list[index].video_time+'</p>'+
+									  '</li>')
+	            	            $('.today-top-today').append(oDiv2)
+	            		}
+	            		else
+	            		{
+	            			var oDiv2=$('<li class="today-top-content"><a class="today-mask" href="html/video.html?video_id='+data.data.daily_list[0].video_list[index].video_id+'"></a>'+
+									  '<img src="'+data.data.daily_list[0].video_list[index].video_img_url+'"/>'+
+									  '<p>'+data.data.daily_list[0].video_list[index].video_title+'</p>'+
+									  '<p>'+data.data.daily_list[0].video_list[index].channel_name+' | '+data.data.daily_list[0].video_list[index].video_label_name+' / '+data.data.daily_list[0].video_list[index].video_time+'</p>'+
+								      '</li>')
+	            	            $('.today-top-today').append(oDiv2)
+	            		}
+	            	   
+	            	})
+	            	 /*第二天*/
+	            	var oDiv3=$('<div class="today-foot-head">'+
+								'<div></div>'+
+							    '<h2>'+data.data.daily_list[1].daily_time+'</h2>'+
+							    '<div></div>'+
+							    '</div>')
+	            	var aLi=$('<li class="today-foot"></li>')
+	            	    aLi.append(oDiv3)
+	            	var oUl=$('<ul></ul>')
+	            	$.each(data.data.daily_list[1].video_list, function(i) {
+	            		if(data.data.daily_list[1].video_list[i].channel_name=='')
+	            		{
+	            			var oDiv4=$('<li class="today-top-content"><a class="today-mask" href="html/video.html?video_id='+data.data.daily_list[1].video_list[i].video_id+'"></a>'+
+									'<img class="today-top-img" src="'+data.data.daily_list[1].video_list[i].video_img_url+'"/>'+
+									'<p>'+data.data.daily_list[1].video_list[i].video_title+'</p>'+
+									'<p>'+data.data.daily_list[1].video_list[i].video_label_name+' / '+data.data.daily_list[1].video_list[i].video_time+'</p>'+
+								    '</li>')
+	            		}
+	            		else
+	            		{
+	            			var oDiv4=$('<li class="today-top-content"><a class="today-mask" href="html/video.html?video_id='+data.data.daily_list[1].video_list[i].video_id+'"></a>'+
+									'<img class="today-top-img" src="'+data.data.daily_list[1].video_list[i].video_img_url+'"/>'+
+									'<p>'+data.data.daily_list[1].video_list[i].video_title+'</p>'+
+									'<p>'+data.data.daily_list[1].video_list[i].channel_name+' | '+data.data.daily_list[1].video_list[i].video_label_name+' / '+data.data.daily_list[1].video_list[i].video_time+'</p>'+
+								    '</li>')
+	            		}
+	            		oUl.append(oDiv4)
+	            		aLi.append(oUl)
+	            	    $('#thelist').append(aLi)
+	            	})
+	            	/*第三天*/
+	            	var oDiv5=$('<div class="today-foot-head">'+
+								'<div></div>'+
+							    '<h2>'+data.data.daily_list[2].daily_time+'</h2>'+
+							    '<div></div>'+
+							    '</div>')
+	            	var aLi2=$('<li class="today-foot"></li>')
+	            	    aLi2.append(oDiv5)
+	            	var oUl2=$('<ul></ul>')
+	            	$.each(data.data.daily_list[2].video_list, function(i) {
+	            		if(data.data.daily_list[2].video_list[i].channel_name=='')
+	            		{
+	            			var oDiv6=$('<li class="today-top-content"><a class="today-mask" href="html/video.html?video_id='+data.data.daily_list[2].video_list[i].video_id+'"></a>'+
+									'<img src="'+data.data.daily_list[2].video_list[i].video_img_url+'"/>'+
+									'<p>'+data.data.daily_list[2].video_list[i].video_title+'</p>'+
+									'<p>'+data.data.daily_list[2].video_list[i].video_label_name+' / '+data.data.daily_list[2].video_list[i].video_time+'</p>'+
+								    '</li>')
+	            		}
+	            		else
+	            		{
+	            			var oDiv6=$('<li class="today-top-content"><a class="today-mask" href="html/video.html?video_id='+data.data.daily_list[2].video_list[i].video_id+'"></a>'+
+									'<img src="'+data.data.daily_list[2].video_list[i].video_img_url+'"/>'+
+									'<p>'+data.data.daily_list[2].video_list[i].video_title+'</p>'+
+									'<p>'+data.data.daily_list[2].video_list[i].channel_name+' | '+data.data.daily_list[2].video_list[i].video_label_name+' / '+data.data.daily_list[2].video_list[i].video_time+'</p>'+
+								    '</li>')
+	            		}
+	            		oUl2.append(oDiv6)
+	            		aLi2.append(oUl2)
+	            	$('#thelist').append(aLi2)
+	            	})
+            	}
+            	else{
+            		layer.msg('系统繁忙');
+            	}
+            	
+            },
+            error: function(xhr, type){
+                layer.msg('系统繁忙');
+               
+            }
+        });
+        
+        $('.downloadapp').on('click',function(){
+        	transferTo()
+        })
+        /*判断是微信端还是android或ios端*/
+		function isWeiXin(){
+		    var ua = window.navigator.userAgent.toLowerCase();
+		    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+		        return true;
+		    }else{
+		        return false;
+		    }
+		}
+		function transferTo()
+		{
+		    var flag = isWeiXin();
+		    if(flag)
+		    {
+		    	/*朋友圈跳转*/
+		        window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.svd.hiplus5";
+		    }
+		    else
+		    {
+		        var u = navigator.userAgent;
+		        if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+		            //安卓手机
+		            window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.svd.hiplus5";
+		         
+		        }
+		        else if (u.indexOf('iPhone') > -1) 
+		        {//苹果手机
+		            //苹果手机
+		             var ub = navigator.userAgent.toLowerCase();//获取判断用的对象
+		             if (ub.match(/WeiBo/i) == "weibo") 
+		             {
+                          $('.share-mask').show()
+                          $('.share-mask').on('click',function(){
+                          	$('.share-mask').hide()
+                          })
+                     }
+		             else
+		             {
+                      	window.location.href = "itms-apps://itunes.apple.com/cn/app/hi+5-dian-jing-you-xi-shi/id1140817639?mt=8";
+                      }
+		        } 
+		        else
+		        {
+		        }
+		    }
+		}
+</script>
+</html>

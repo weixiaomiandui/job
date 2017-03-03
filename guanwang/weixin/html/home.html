@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>hi+5</title>
+		<meta name="google" content="notranslate">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/home.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+	<body>
+		<div id="home-screen">
+			<nav class="header-nav clear">
+			    <i class="iconfont ">&#xe640;</i>
+			    <i class="iconfont">&#xe615;</i>
+			    <i class="iconfont weixin">&#xe627;</i>
+			</nav>
+			<div class="content">
+				<div class="logo"></div>
+				<div class="intro"></div>
+				<div class="download">
+					<a calss="btn-ios"><div class="down-btn-ios down-btn"></div></a>
+					<a calss="btn-android"><div class="down-btn-android down-btn"></div></a>
+				</div>
+			</div>
+			<video id="video" autoplay loop poster="../img/home_poster.ab3102d4.jpg" >
+					<source src="../img/video.mp4"></source>
+			</video>
+		</div>
+		<div id="today-video">
+			<!--<div class="today-video-list">
+				<div class="today-video-date">- Sep. 18 -</div>
+			</div>
+			<div class="today-video" style="background: url(img/573e8f159512ba8e41b2548a740415e9.jpeg) no-repeat;background-size: cover;background-position: center;">
+                <h2 class="today-video-title">VFX，不要相信你的眼睛</h2>
+                <p class="today-video-meta">#集锦 / 2'22"</p>
+            </div>
+            <div class="today-video" style="background: url(img/577d1fa706d9767056b94c8fb8accdd2.jpeg) no-repeat;background-size: cover;background-position: center;">
+                <h2 class="today-video-title">VFX，不要相信你的眼睛</h2>
+                <p class="today-video-meta">#集锦 / 2'22"</p>
+            </div>
+            <div class="today-video" style="background: url(img/8c5dccf8855fd7b88a8194d6a95acf34.jpeg) no-repeat;background-size: cover;background-position: center;">
+                <h2 class="today-video-title">VFX，不要相信你的眼睛</h2>
+                <p class="today-video-meta">#集锦 / 2'22"</p>
+            </div>-->
+		</div>
+		<div id="download-area">
+			<div class="download-area-intro"></div>
+			<div class="download-area-element-container clear">
+				<div class="download-area-element-icon"></div>
+				<div class="download-area-element-logo"></div>
+				<div class="download-area-element-btn">
+					<button class="download-area-element-btn-ios"></button> 
+					<button class="download-area-element-btn-android"></button>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<ul class="footer-link-container">
+				<li><a href="mailto:eyepetizer@wandoujia.com?subject=[意见反馈]">意见反馈</a></li>
+				<li><a href="http://www.wandoujia.com/ios/eyepetizer/agreement.html">用户协议</a></li>
+				<li><a href="http://www.wandoujia.com/ios/eyepetizer/rights.html">权利声明</a></li>
+				<li><a href="mailto:eyepetizer@wandoujia.com?subject=[作品投稿]">作品投稿</a></li>
+				<li><a href="mailto:eyepetizer@wandoujia.com?subject=[商务合作]">商务合作</a></li>
+			</ul>
+			<div class="footer-copyright">© hi+5视频</div>
+		</div>
+		<div id="qr-ios-on-other" class="modal" style="display: none;">
+			<img src="../img/landing_scan_qr_ios.0b469da0.png">
+			<p>扫描二维码<br>下载 iOS 版开眼<br>
+			</p>
+		</div>
+		<div id="qr-android-on-other" class="modal" style="display: none;">
+			<img src="../img/landing_scan_qr_ios.0b469da0.png"><p>扫描二维码<br>下载 Android 版开眼<br>
+			</p>
+		</div>
+		<div id="qr-wechat" class="modal" style="display: none;">
+			<img src="../img/landing_wechat_account.07b7387f.jpg"><p>扫描二维码<br>关注「开眼」微信公众号</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+            type: 'POST',
+            url: 'http://www.hiplus5.com/HJF/user/get_all_daily_video_list.do',
+            dataType: 'JSON',
+            success: function(data){
+            	console.log(data)
+            	var oDiv=$('<div class="today-video-list">'+
+				'<div class="today-video-date">-  '+data.data.daily_list[0].daily_time+ ' -</div>'+
+			  '</div>')
+            	$('#today-video').append(oDiv)
+            	$.each(data.data.daily_list[0].video_list, function(index) {
+            		var oDiv2=$('<div class="today-video" style="background: url('+data.data.daily_list[0].video_list[index].video_img_url+') no-repeat;background-size: cover;background-position: center;">'+
+                '<h2 class="today-video-title">'+data.data.daily_list[0].video_list[index].video_label_name+'</h2>'+
+                '<p class="today-video-meta">'+data.data.daily_list[0].video_list[index].video_title+' / '+data.data.daily_list[0].video_list[index].video_time+'</p>'+
+            '</div>')
+            	$('#today-video').append(oDiv2)
+            	    oDiv2.on('click',function(){
+            	    	var _this=$(this).index()-1
+            	    	console.log(_this)
+            	    	localStorage.setItem('video_id',data.data.daily_list[0].video_list[_this].video_id)
+            	    	localStorage.setItem('video_label_name',data.data.daily_list[0].video_list[_this].video_label_name)
+            	    	window.location.href='video.html'
+            	    })
+            	})
+            },
+            error: function(xhr, type){
+                layer.msg('系统繁忙');
+               
+            }
+        });
+        
+        /*点击让二维码出现*/
+        $('.weixin').on('click',function(){
+        	$('#qr-wechat').fadeIn()
+        	event.stopPropagation(); 
+        })
+        $(document).on('click',function(){
+        	$('#qr-wechat').fadeOut()
+        })
+        /*点ios二维码出现*/
+        $('.down-btn-ios').on('click',function(){
+        	$('#qr-ios-on-other').fadeIn()
+        	event.stopPropagation(); 
+        })
+        $(document).on('click',function(){
+        	$('#qr-ios-on-other').fadeOut()
+        })
+        /*点ios二维码出现*/
+        $('.down-btn-android').on('click',function(){
+        	$('#qr-android-on-other').fadeIn()
+        	event.stopPropagation(); 
+        })
+        $(document).on('click',function(){
+        	$('#qr-android-on-other').fadeOut()
+        })
+         /*点ios二维码出现*/
+        $('.download-area-element-btn-ios').on('click',function(){
+        	$('#qr-android-on-other').fadeIn()
+        	event.stopPropagation(); 
+        })
+        $(document).on('click',function(){
+        	$('#qr-android-on-other').fadeOut()
+        })
+         /*点ios二维码出现*/
+        $('.download-area-element-btn-android').on('click',function(){
+        	$('#qr-android-on-other').fadeIn()
+        	event.stopPropagation(); 
+        })
+        $(document).on('click',function(){
+        	$('#qr-android-on-other').fadeOut()
+        })
+	</script>
+</html>

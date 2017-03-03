@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="title-name"></title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/theme.css?version=1.2.6"/>
+	<link rel="stylesheet" type="text/css" href="../css/zy.media.min.css"/>
+	<link rel="shortcut icon" href="../img/favicon.ico">
+    <script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="../js/remn.js"></script>
+	<script type="text/javascript" src="../layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="../js/ShareSDK.js"></script>
+	<script type="text/javascript" src="../js/zy.media.min.js"></script>
+		<script type="text/javascript">
+			
+			 function shareContentClickHandler(summary,imgurl,title,url)
+        {
+            var params = {
+                "text" : summary,
+                "imageUrl" : imgurl,
+                "title" : title,
+                "url" : url,
+                "description" : "测试的描述",
+                "site" : "ShareSDK",
+                "siteUrl" : "http://sharesdk.cn",
+                "type" : $sharesdk.ContentType.WebPage
+            };
+            $sharesdk.shareContent($sharesdk.PlatformID.WeChat, params, function (reqId, platform, state, shareInfo, error) {
+                shareVideo();
+            });
+        }
+        function shareContentClickHandler1(summary,imgurl,title,url)
+        {
+            var params = {
+                "text" : summary,
+                "imageUrl" : imgurl,
+                "title" : title,
+                "url" : url,
+                "description" : "测试的描述",
+                "site" : "ShareSDK",
+                "siteUrl" : "http://sharesdk.cn",
+                "type" : $sharesdk.ContentType.WebPage
+            };
+            $sharesdk.shareContent($sharesdk.PlatformID.WeChatMoments, params, function (reqId, platform, state, shareInfo, error) {
+               shareVideo();
+            });
+        }
+        function shareContentClickHandler2(summary,imgurl,title,url)
+        {
+        	alert(url)
+            var params = {
+                "text" : summary,
+                "imageUrl" : imgurl,
+                "title" : title,
+                "titleUrl" : url,
+                "description" : "测试的描述",
+                "site" : "ShareSDK",
+                "siteUrl" : "http://sharesdk.cn",
+                "type" : $sharesdk.ContentType.Auto
+            };
+            $sharesdk.shareContent($sharesdk.PlatformID.QQ, params, function (reqId, platform, state, shareInfo, error) {
+               shareVideo();
+            });
+        }
+        function shareContentClickHandler3(text,urlimg)
+        {
+        	console.log(text)
+            var params = {
+                "text" : text,
+                "imageUrl" : urlimg,
+                "title" : "测试的标题",
+                "url" : "http://sharesdk.cn",
+                "description" : "测试的描述",
+                "site" : "ShareSDK",
+                "siteUrl" : "http://sharesdk.cn",
+                "type" : $sharesdk.ContentType.Text
+            };
+            $sharesdk.shareContent($sharesdk.PlatformID.SinaWeibo, params, function (reqId, platform, state, shareInfo, error) {
+                shareVideo();     
+                layer.msg('分享成功');
+            });
+        }
+		</script>
+	</head>
+	<body>
+	<div id="box1">
+		<div id="box">
+			<!--内容区-->
+			<!--内容区-->
+			<section class="video-content1">
+				<div id="wrapper">
+	                <div id="scroller">
+	                	<ul class="video-recommended">
+							<li class="theme-top">
+							</li>
+							<li class="theme-top-text">
+							</li>
+							<li class="theme-middle">
+							</li>
+							<li class="theme-middle-foot">
+							</li>
+							<li class="theme-middle-share">
+								<div class="theme-middle-share-text">分享</div>
+								<div class="share-cont-type msosh">
+									<ul>
+										<li class="sharewxf">
+											<i class="iconfont">&#xe60d;</i>
+										</li>
+										<li class="sharewx">
+											<i class="iconfont">&#xe647;</i>
+										</li>
+										<li class="shareqq">
+											<i class="iconfont">&#xe61f;</i>
+										</li>
+										<li class="sharewb">
+											<i class="iconfont">&#xe619;</i>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="theme-write"><p>写评论</p></div>
+								<ul class="theme-recomment">
+								</ul>
+							</li>
+							<li class="theme-recomment-null" style="font-size: 0.3rem;text-align: center;color: #FFFFFF;padding: 0.2rem 0;">没有更多内容</li>
+				        </ul>
+	                </div>
+				</div>	
+			</section>
+			<div class="theme-input">
+				<div class="theme-send clear">
+					<div class="theme-send-x"></div>
+					<div class="theme-send-pinlun">评论</div>
+					<div class="theme-send-save"></div>
+				</div>
+			    <input maxlength="100" class="theme-input-text" type="text" name="fname" />
+			</div>
+		</div>
+		<!--<div class="refresh">
+			<img src="../img/resh.png" alt="" />
+		</div>-->
+	</div>
+	</body>
+	<script type="text/javascript">
+        function GetQueryString(name)
+		{
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if(r!=null)
+		    	return unescape(r[2]); 
+		    return "";
+		}
+		
+		var servername ='http://www.hiplus5.com';
+		/*var servername ='http://192.168.199.114:8080';*/
+		
+		var subject_id = GetQueryString("subject_id");
+		var userId = GetQueryString("user_id");
+		var content;
+		var subject_title;//专题标题
+		var subject_content;//专题描述
+		var subject_img_url;//专题封面
+		var subject_url;//专题分享链接
+		var subject_author;//专题作者
+		var subject_translator;//专题翻译
+		//subject_id='b3d128e8ae124716b31216771ec2b13c'
+		var video_list;//专题视频列表
+		
+		function waitAlertStop(){
+		}
+		function shareContent(content){
+		};
+        /*ios分享传参*/
+    	function getShareContent()
+    	{
+			content={
+	    		'img':subject_img_url,
+	    		'url':subject_url,
+	    		'title':subject_title,
+	    		'dec':subject_content
+    	  	};
+    	  	shareContent(content);
+		};
+		/*android分享传参*/
+        function getInfo(){
+		    HostApp.shareInfo(subject_title,subject_img_url,subject_content,subject_url);
+		  }
+		function getUserId()
+		{
+		}
+		function sendUserId(user)
+		{
+			 userId=user;
+		}
+		function dismissLoading(){}
+		/**初始化分享按钮事件*/
+		
+		/**初始化专题内容*/
+		function initSubjectInfo()
+		{
+			$('.title-name').html('【HiPlus5】'+subject_title);
+            	var oImg = $('<img src="'+subject_img_url+'"/><p>'+subject_title+'</p>');
+            	$('.theme-top').html(oImg)
+            	var oP1 = $('<p>'+subject_content+'</p>');
+            	$('.theme-top-text').html(oP1)
+            	$.each(video_list, function(index) {
+            		var oDiv=$('<div class="theme-middle-title">'+video_list[index].video_title+'</div>'+
+					'<div class="video-cont" style="position: relative;height: 4rem;">'+
+					'<div class="zy_media" style="height: 4rem;  background: #262628;">'+
+					'<video class="video" style="background:url() no-repeat;background-size:cover;" controls="controllers" width="100%" height: 100%; poster="">'+
+					'<source src="'+video_list[index].video_sd_url+'" type="video/mp4">您的浏览器不支持HTML5视频'+
+					'</video>'+
+				    '</div>'+
+					'<div class="theme-video-bg" style="background: url('+video_list[index].video_img_url+') no-repeat;background-size:cover;position:absolute;top:0;height:4rem;width:7rem;">'+
+					'</div><img class="play-start" style="position: absolute;left: 45%;top: 40%;height: 1rem;width: 1rem;" src="../img/start.png"/></div>'+
+					'<div class="theme-middle-dec">'+video_list[index].video_channel_name+' | '+video_list[index].video_label_name+' / '+video_list[index].video_time+'</div>'+
+					'<div class="theme-middle-text">'+
+				    '<p>'+video_list[index].video_summary+'</p>'+
+					'</div>')
+            		$('.theme-middle').append(oDiv)
+            	})
+            	/*视频播放*/
+			   zymedia('video');
+			   $('.play-start').on('click',function(){
+			   	$(this).hide();
+			   	$(this).siblings('.theme-video-bg').hide()
+			   	$(this).siblings('.zy_media').children('.zy_wrap').children('.video')[0].play();
+			   	})
+            	var oP = $('<p>本文来自于hi+5微信公众平台</p>'+
+					'<p>文章作者:'+subject_author+'</p>'+
+					'<p>翻译:'+subject_translator+'</p>');
+            	$('.theme-middle-foot').append(oP);
+		}
+		
+	  
+	 	$.ajax({
+            type: 'POST',
+            url: servername+'/HJF/user2/get_subject_info.do',
+            dataType: 'JSON',
+            data:{subject_id:subject_id},
+            success: function(data)
+            {
+            	if(data.result=="1")
+            	{
+			        subject_title = data.data.subject_title;
+			        subject_content = data.data.subject_content;
+			        subject_img_url = data.data.subject_img_url;
+			        subject_url = data.data.subject_share_url;
+			        subject_author = data.data.subject_author;
+			        subject_translator = data.data.subject_translator;
+			        video_list = data.data.video_list;
+			        
+			       /*分享给朋友*/
+		            $('.sharewxf').on('click',function(){
+		            	shareContentClickHandler(data.data.subject_content,data.data.subject_img_url,data.data.subject_title,data.data.subject_share_url);
+		            	
+		            })
+		            /*分享到朋友圈*/
+		           $('.sharewx').on('click',function(){
+		           
+		            	 shareContentClickHandler1(data.data.subject_content,data.data.subject_img_url,data.data.subject_title,data.data.subject_share_url);
+		            	 
+		            })
+		           /*分享到qq*/
+		          $('.shareqq').on('click',function(){
+		            	shareContentClickHandler2(data.data.subject_content,data.data.subject_img_url,data.data.subject_title,data.data.subject_share_url);
+		            	
+		            })
+		          /*分享到微博*/
+		         $('.sharewb').on('click',function(){
+		         	var title=data.data.subject_title+data.data.subject_share_url+"快@HiPlus5"+"http://a.app.qq.com/o/simple.jsp?pkgname=com.svd.hi5";
+		         	//console.log(title)
+		         	shareContentClickHandler3(title,data.data.subject_img_url);
+		         	shareVideo();
+		         });
+			        
+			        initSubjectInfo();
+            	}
+            	else
+            	{
+            		layer.open({
+				    content: '系统繁忙'
+				    ,btn: '我知道了'
+				    });
+            	}
+            	
+           		HostApp.dismissLoading()
+           		$('.refresh').hide();
+           		$('#box').show();
+           		$('.video-content1').show()
+            },
+            error: function(xhr, type){
+                layer.open({
+			    content: '系统繁忙'
+			    ,btn: '我知道了'
+			    });
+            }
+        });
+       // console.log(subject_title)
+        /**写评论*/ 
+        $('.theme-write').on('click',function(){
+			userId=HostApp.checkLogin();
+			if(userId =='')
+			{
+				HostApp.showLogin();
+			}
+			else
+			{
+			   $('.theme-input').show();
+			   $('.theme-input-text').focus();
+			}
+		});
+		
+        /*评论列表*/
+		var page = 1;//页码
+		var is_all = 0;//是否已返回全部评论
+		
+		comment(true);
+		/**
+		* 加载评论
+		*/
+		function comment(flag){
+			$.ajax({
+	            type: 'POST',
+	            url: servername+'/HJF/user2/get_subject_comment_list.do',
+	            dataType: 'JSON',
+	            data:{user_id:userId,page:page,subject_id:subject_id},
+	            success: function(data)
+	            {
+	            	if(data.result=="1")
+	            	{
+	            	
+						is_all = data.data.is_all;
+		           		initCommentList(data.data.comment_list)
+		            	datt=data.data.comment_list
+		            	if(flag)
+		            	{
+			            	/*点赞/取消点赞事件*/
+							$('.theme-recomment-time-zan').on('click',function(){
+								userId=HostApp.checkLogin();
+								if(userId =='')
+								{
+									HostApp.showLogin();
+								}
+								else
+								{
+									_this=$(this).parent().parent().parent().index();
+									if(datt[_this].comment_is_laud==1)
+									{
+										cancel_laud_subject_comment(_this,userId,datt[_this].comment_id,datt[_this].comment_laud_num)	
+									}
+									else
+									{
+								        laud_subject_comment(_this,userId,datt[_this].comment_id,datt[_this].comment_laud_num);
+									}
+								}
+							})
+		            	}
+	            	}
+	            	else
+	            	{
+	            		alert(data.error_msg);
+	            	}
+	            	
+	            },
+	            error: function(xhr, type){
+	            	layer.open({
+				    content: '系统繁忙'
+				    ,btn: '我知道了'
+				    });
+	            }
+        	});
+        };
+        
+        function initCommentList(datt)
+        {
+        	$.each(datt, function(index){ 
+        		var oDivrecomment;       	
+	       		if(datt[index].comment_is_laud==1)
+	       		{
+	       	 		oDivrecomment = $('<li class="theme-recomment-content">'+
+					'<div class="theme-recomment-img"><img src="'+datt[index].user_head_img_url+'" alt="" /></div>'+
+					'<div class="theme-recomment-border">'+
+					'<div class="theme-recomment-cont">'+
+					'<p>'+datt[index].user_name+'</p>'+
+					'<p>'+datt[index].comment_time+'</p>'+
+					'<p>'+datt[index].comment_content+'</p>'+
+					'</div>'+
+					'<div class="theme-recomment-time">'+
+					'<div class="theme-recomment-time-zan iconfont">&#xe638;</div>'+
+					'<div class="theme-recomment-time-num">'+datt[index].comment_laud_num+'</div>'+
+					'</div>'+
+					'</div>'+	
+					'</li>');
+	       	 	}
+	       	 	else
+	       	{
+	       	 		oDivrecomment = $('<li class="theme-recomment-content">'+
+					'<div class="theme-recomment-img"><img src="'+datt[index].user_head_img_url+'" alt="" /></div>'+
+					'<div class="theme-recomment-border">'+
+					'<div class="theme-recomment-cont">'+
+					'<p>'+datt[index].user_name+'</p>'+
+					'<p>'+datt[index].comment_time+'</p>'+
+					'<p>'+datt[index].comment_content+'</p>'+
+					'</div>'+
+					'<div class="theme-recomment-time">'+
+					'<div class="theme-recomment-time-zan iconfont">&#xe603;</div>'+
+					'<div class="theme-recomment-time-num">'+datt[index].comment_laud_num+'</div>'+
+					'</div>'+
+					'</div>'+	
+					'</li>');
+	       	 	}
+       			$('.theme-recomment').append(oDivrecomment)
+       	 	});
+        }
+        
+        /**
+        * 取消点赞
+        */
+       function cancel_laud_subject_comment(index,user_id,comment_id,comment_laud_num)
+        {
+        	$.ajax({
+	            type: 'POST',
+	            url: servername+'/HJF/user2/cancel_laud_subject_comment.do',
+	            dataType: 'JSON',
+	            data:{user_id:user_id,comment_id:comment_id},
+	            success: function(data){
+	            	comment_laud_num=Number(Number(comment_laud_num)-Number(1));
+	            	$('.theme-recomment-time-zan').eq(index).html('&#xe603;');
+	            	$('.theme-recomment-time-num').eq(index).html(comment_laud_num);
+	            	datt[index].comment_is_laud=0;
+	            	datt[index].comment_laud_num=comment_laud_num;
+	           	},
+	            error: function(xhr, type){
+	            	layer.open({
+				    content: '系统繁忙'
+				    ,btn: '我知道了'
+				    });
+	            }
+	        });
+        }
+        /**
+        * 点赞
+        */
+        function laud_subject_comment(index,user_id,comment_id,comment_laud_num)
+        {
+        	$.ajax({
+	            type: 'POST',
+	            url: servername+'/HJF/user2/laud_subject_comment.do',
+	            dataType: 'JSON',
+	            data:{user_id:user_id,comment_id:comment_id},
+	            success: function(data){
+	            	comment_laud_num=Number(Number(comment_laud_num)+Number(1));
+	            	$('.theme-recomment-time-zan').eq(index).html('&#xe638;');
+	            	$('.theme-recomment-time-num').eq(index).html(comment_laud_num);
+	            	datt[index].comment_is_laud=1;
+	            	datt[index].comment_laud_num=comment_laud_num
+	           	},
+	            error: function(xhr, type){
+	                alert('系统繁忙');
+	            }
+	        });
+        }
+       
+        /*滚动加载评论*/
+	   	$(window).scroll(function(){
+	        if($(document).scrollTop() >= $(document).height() - $(window).height()) 
+	        {
+	        	if(is_all==0)
+	        	{
+		        	page++;
+		        	comment(false);
+	        	}
+	        }
+	    });
+    	
+		transfer()
+		/**获取判断用的对象*/
+		function transfer()
+		{
+        	var ub = navigator.userAgent.toLowerCase();
+            if (ub.match(/MicroMessenger/i) == "micromessenger")
+            {
+            	$('.theme-middle-share').hide()
+		    }
+		    else if (ub.match(/WeiBo/i) == "weibo") 
+		    {
+		    	$('.theme-middle-share').hide()
+            }
+            else if(ub.match(/QQ/i) == "qq")
+            {
+            	$('.theme-middle-share').hide()
+            }
+            else
+          	{
+            	$('.theme-middle-share').show()
+           	}
+		}
+		
+		function getComment(comment_content)
+		{
+			$.ajax({
+	        	type: 'POST',
+	            url: servername+'/HJF/user2/add_subject_comment.do',
+	            dataType: 'JSON',
+	            data:{user_id:userId,subject_id:subject_id,comment_content:comment_content},
+	            success: function(data)
+	            {
+	            	if(data.result==1)
+	            	{
+	            		$('.theme-recomment').html('');
+	            		
+	            		page = 1;
+	            		is_all = 0;
+	            	    comment(true);
+	            	}
+	            	else
+	            	{
+	            		layer.open({
+					    content: '系统繁忙'
+					    ,btn: '我知道了'
+					    });
+	            	}
+            	},
+	            error: function(xhr, type){
+	                layer.open({
+				    content: '系统繁忙'
+				    ,btn: '我知道了'
+				    });
+	            }
+	    	});
+		}
+		
+		/*评论*/
+		$('.theme-send-x').on('click',function(){
+			$('.theme-input-text').val('')
+			$('.theme-input').hide()
+		})
+		
+		$('.theme-send-save').on('click',function(){
+			var content=$('.theme-input-text').val();
+			if(content==''){
+				layer.open({
+				    content: '内容不能为空'
+				    ,btn: '我知道了'
+				  });
+			}else{
+		      getComment(content)
+			 $('.theme-input').hide()
+			}
+		})
+		
+		function shareVideo()
+	    {
+	    	$.ajax({
+	            type: 'POST',
+	            url: servername+'/HJF/user/share_video.do',
+	            dataType: 'JSON',
+	            data:{user_id:userId,subject_id:subject_id},
+	            success: function(data){
+	            },
+	            error: function(xhr, type){
+	                /*layer.open({
+				    content: '系统繁忙'
+				    ,btn: '我知道了'
+				    });*/
+	            }
+	        });
+	    }
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

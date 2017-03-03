@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title class="title-name"></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/channel.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/zy.media.min.css"/>
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="../js/rem.js"></script>
+		<script type="text/javascript">
+			$(window).load(function() {
+				$('#box1').delay(350).fadeIn()
+			})
+		</script>
+	</head>
+	<body>
+		<!--页面加载 开始-->
+		 <!-- <div id="preloader">
+		    <div id="status">
+		      <p class="center-text"><span>拼命加载中···</span></p>
+		    </div>
+		  </div>-->
+		  <!--页面加载 结束--> 
+	<div id="box1">
+		<div id="box">
+			<header class="quality-head">
+				<h2>hi+5频道分享</h2>
+			</header>
+			<!--内容区-->
+			<section class="quality-content">
+					<div class="quality-cont">
+					</div>
+					<div class="chahhel-cont-head download-index-app">
+						<p>点击观看更多精彩视频</p>
+						
+					</div>
+					<!--视频推荐-->
+					<div class="quality-recommended">
+						<div class="quality-recommended-title">
+							<p></p>
+						    <p>精彩视频推荐</p>
+						</div>
+						
+					</div>
+					<div class="quality-recommended-more download-index-app">
+						<p>
+							下载 hi+5 APP欣赏更多精彩视频
+						</p>
+					</div>
+					
+					<div class="quality-code">
+						<div><img class="quality-code-img" src="../img/erweima.gif"/></div>
+						<p class="quality-code-p">长按二维码关注 hi+5 微信公众号</p>
+						<div class="quality-code-middle">
+							<div></div>
+						    <h2>或</h2>
+						    <div></div>
+						</div>
+						<div class="quality-code-phone clear">
+							<img class="download-index-app" src="../img/appple.jpg"/>
+							<img class="download-index-app" src="../img/android.png"/>
+						</div>
+						<p class="quality-code-p2">各大应用商店搜索 “hi+5”下载app</p>
+					</div>
+					
+					<div class="share-mask">
+						<img src="../img/live_weixin.png"/>
+					</div>
+			</section>
+			<div class="quality-code-foot">
+				<div class="today-head-img"></div>
+				<p>高清视频分享平台</p>
+				<p class="icon download-index-app">立即下载</p>
+			</div>
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript" src="../js/zy.media.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript">
+	function GetQueryString(name)
+		{
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if(r!=null)
+		    	return unescape(r[2]); 
+		    return "";
+		}
+		
+		var channel_id = GetQueryString("channel_id");
+			$.ajax({
+            type: 'POST',
+            url: 'http://www.hiplus5.com/HJF/user/get_channel_video_list.do',
+            dataType: 'JSON',
+            data:{channel_id:channel_id},
+            success: function(data){
+            	$('.title-name').html('【HiPlus5】'+data.data.video_list[0].channel_name)
+            	//console.log(data)
+            	var oDiv=$('<div class="quality-top">'+
+						'<img src="'+data.data.video_list[0].channel_head_img_url+'"/>'+
+						'<p>'+data.data.video_list[0].channel_name+'</p>'+
+						'<p>'+data.data.video_list[0].channel_summary+'</p>'+
+					'</div>')
+            	oDiv.insertBefore($('.quality-cont'))
+            	var oImg=$('<img class="videoimg" src="../img/hi5.png">')
+            	$('.quality-cont').append(oImg)
+            	$.each(data.data.video_list, function(index) {
+            		if(index<4){
+            			var oDiv2=$('<div class="channel-recommended-first"><div class="channel-mask"></div>'+
+							'<img class="channel-recommended-img"  src="'+data.data.video_list[index].video_img_url+'"/>'+
+							'<div class="channel-recommended-detail">'+
+								'<p>'+data.data.video_list[index].video_title+'</p>'+
+								'<p>'+data.data.video_list[index].channel_name+' | '+data.data.video_list[index].video_label_name+' / '+data.data.video_list[index].video_time+'</p>'+
+							'</div>'+
+						'</div>')
+            		}else if(index==4){
+            			var oDiv2=$('<div class="channel-recommended-first"><div class="channel-mask"></div>'+
+							'<img class="channel-recommended-img" src="'+data.data.video_list[index].video_img_url+'"/>'+
+							'<div class="channel-recommended-detail">'+
+								'<p>'+data.data.video_list[index].video_title+'</p>'+
+								'<p>'+data.data.video_list[index].channel_name+' | '+data.data.video_list[index].video_label_name+' / '+data.data.video_list[index].video_time+'</p>'+
+							'</div>'+
+						'</div>')
+            		}
+            		
+            		$('.quality-cont').append(oDiv2)
+            		
+            	})
+            	$('.channel-recommended-first').on('click',function(){
+            		var _this=$(this).index()-1;
+            		console.log(_this)
+            		window.location.href='video1.html?video_id='+data.data.video_list[_this].video_id;
+            	})
+            	//$('.quality-cont').append(oImg)
+            	
+            },
+            error: function(xhr, type){
+                layer.msg('系统繁忙');
+               
+            }
+        });
+        /*精彩视频推荐*/
+		$.ajax({
+            type: 'POST',
+            url: 'http://www.hiplus5.com/HJF/user/get_home.do',
+            success: function(data){
+            	$.each(data.daily_list, function(index) {
+            		var oDiv=$('<div class="quality-recommended-first clear">'+
+							'<img class="" class="quality-recommended-img" src="'+data.daily_list[index].video_img_url+'"/>'+
+							'<div class="quality-recommended-detail">'+
+								'<p>'+data.daily_list[index].video_title+'</p>'+
+								'<p>'+data.daily_list[index].channel_name+' | '+data.daily_list[index].video_label_name+' / '+data.daily_list[index].video_time+'</p>'+
+							'</div>'+
+						'</div>')
+            		$('.quality-recommended').append(oDiv)
+            	})
+            	 /*下载跳转到首页*/
+				$('.quality-recommended-first').on('click',function(){
+					var _this=$(this).index()-1;
+            		window.location.href='video1.html?video_id='+data.daily_list[_this].video_id;
+				})
+            	//console.log(data)
+            },
+            error: function(xhr, type){
+                layer.msg('系统繁忙');
+               
+            }
+        });
+        $('.download-index-app').on('click',function(){
+        	transferTo()
+        })
+       
+		/*判断是微信端还是android或ios端*/
+		function isWeiXin(){
+		    var ua = window.navigator.userAgent.toLowerCase();
+		    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+		        return true;
+		    }else{
+		        return false;
+		    }
+		}
+		 
+		function transferTo(){
+		    var flag = isWeiXin();
+		    if(flag){
+		    	/*朋友圈跳转*/
+		        window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.svd.hiplus5";
+		    }else{
+		        var u = navigator.userAgent;
+		        if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+		            //安卓手机
+		            window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.svd.hiplus5";
+		         
+		        } else if (u.indexOf('iPhone') > -1) {//苹果手机
+		            //苹果手机
+		            var ub = navigator.userAgent.toLowerCase();//获取判断用的对象
+		             if (ub.match(/WeiBo/i) == "weibo") {
+                          $('.share-mask').show()
+                          $('.share-mask').on('click',function(){
+                          	$('.share-mask').hide()
+                          })
+                     }else{
+                      	window.location.href = "itms-apps://itunes.apple.com/cn/app/hi+5-dian-jing-you-xi-shi/id1140817639?mt=8";
+                      }
+		        } else{
+		           
+		        }
+		    }
+		}
+	</script>
+</html>

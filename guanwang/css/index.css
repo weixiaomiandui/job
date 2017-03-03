@@ -1,0 +1,343 @@
+@charset "utf-8";
+body,html{height: 100%;}
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+/*第一部分内容*/
+#home-screen{
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	}
+#home-screen, svg:not(:root) {
+    overflow: hidden;
+}
+.header-nav{
+	padding: 10px 10px 0;
+    color: #fff;
+}
+.header-nav i{
+	float: right;
+	margin-right: 15px;
+	font-size: 34px;
+	cursor: pointer;
+}
+
+.logo{
+	background: url(../img/logo.png) no-repeat;
+	width: 90px;
+	height: 140px;
+	background-size:contain ;
+	position: absolute;
+	margin: -70px 0 0 -45px;
+	left: 50%;
+	top: 30%;
+}
+.intro{
+	background: url(../img/images/logo.png) no-repeat;
+	width: 80px;
+	height: 40px;
+	background-size:contain ;
+	position: absolute;
+	margin: -20px 0 0 -40px;
+	left: 50%;
+	top: 44%;
+}
+.content-p{
+	font-size: 16px;
+	text-align: center;
+	color: #FFFFFF;	
+	position: absolute;
+	top: 53%;
+	left: 50%;
+	height: 40px;
+	width: 300px;
+	margin: -20px 0 0 -150px;}
+.btn-ios,.btn-android{
+	text-decoration: none;
+	cursor: pointer;
+}
+.download{
+    height: 50px;
+    left: 50%;
+    margin: -26px 0 0 -176px;
+    top: 61%;
+    position: absolute;
+    width: 352px;
+}
+.down-btn{
+	height: 52px;
+	width: 162px;
+	position: absolute;
+}
+.down-btn-ios{
+	background: url(../img/images/ios.png) no-repeat;
+	left: 0;
+	background-size: contain;
+	cursor: pointer;
+}
+.down-btn-android{
+	background: url(../img/images/android.png) no-repeat;
+	right: 0;
+	background-size: contain;
+	cursor: pointer;
+}
+.video-container{
+	height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -100;
+}
+.video-container #video {
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/*#video{
+    min-height: 100%;
+    min-width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -2;
+}*/
+/*today视频推荐*/
+.today-video-list {
+    margin: 0;
+    padding: 0;
+}
+.today-video-date {
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 90px;
+    text-align: center;
+}
+.today-video {
+    height: 450px;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+}
+.today-video-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -24px;
+}
+.today-video-meta, .today-video-title {
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 45%;
+}
+.today-video-meta {
+    font-size: 16px;
+    margin-top: 32px;
+}
+
+/*下载区*/
+#download-area {
+    color: rgb(0, 0, 0);
+    background: black;
+    padding: 60px 0px;
+}
+.download-area-intro{
+	font-size: 16px;
+	color: #FFFFFF;
+	text-align: center;
+	margin-bottom: 30px;
+	 width: 100%;
+     top: 50%;
+}
+
+.download-area-element-container {
+    width: 340px;
+    margin: 0px auto;
+}
+.download-area-element-container > div {
+    float: left;
+}
+.download-area-element-icon {
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    box-sizing: border-box;
+    height: 80px;
+    width: 90px;
+    background: url(../img/images/redlogo.png) no-repeat;
+    background-size:contain;
+}
+.download-area-element-logo {
+	margin-top: 10px;
+	margin-left: 20px;
+    height: 50px;
+    text-align: center;
+    width: 70px;
+    background: url(../img/images/logob.png) no-repeat;
+    background-size: contain;
+}
+.download-area-element-btn {
+    height: 70px;
+    margin: 0 0 0 20px;
+    position: relative;
+    width: 122px;
+}
+.download-area-element-btn>div {
+    border: none;
+    outline：none;
+    left: 0;
+    height: 30px;
+    position: absolute;
+    width: 122px;
+}
+
+.download-area-element-btn-ios {
+	border: none;
+	outline：none;
+   top: 0;
+   background: url(../img/images/android.png) 0 18.86901% no-repeat;
+   background-size: contain; 
+   cursor: pointer;
+}
+.download-area-element-btn-android {
+   outline：none;
+   bottom: 0;
+   background: url(../img/images/ios.png) 0 18.86901% no-repeat;
+   background-size: contain; 
+   cursor: pointer;
+}
+/*footer区内容*/
+#footer {
+    background: #444;
+    font-size: 12px;
+    padding: 55px 10px;
+}
+.footer-link-container {
+    margin: 0;
+    padding: 0 0 10px;
+    text-align: center;
+}
+.footer-link-container li {
+    display: inline-block;
+    margin: 0 8px;
+}
+.footer-link-container li a {
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.footer-copyright {
+    color: #aaa;
+    text-align: center;
+}
+
+/*小于1024的样式变化*/
+@media screen and (max-width: 1024px){
+	/*视频内容的小于1024的样式*/
+.logo{
+	height: 100px;
+    margin: -50px 0 0 -30px;
+    top: 28%;
+    width: 60px;
+}	
+.intro{
+	height: 30px;
+    margin: -15px 0 0 -30px;
+    top: 42%;
+    width: 60px;
+}	
+.download{
+    height: 124px;
+    margin: -62px 0 0 -81px;
+    top: 67%;
+    width: 162px;
+	}
+.down-btn-ios {
+    top: 0;
+    }
+.down-btn-android {
+    bottom: 0;
+    }
+    /*today推荐的样式*/
+   .today-video {
+    height: 225px;
+}
+/*下载区推荐的样式*/
+
+.download-area-element-container {
+    text-align: center;
+    width: 100%;
+}
+.download-area-element-container>div {
+    float: none;
+    margin: 0 auto;
+}
+.download-area-element-container>div.download-area-element-logo {
+    margin: 30px auto;
+}
+.footer-link-container li {
+    margin: 0 4px;
+}
+}
+/*二维码部分*/
+.modal {
+    background: 0 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.modal img {
+    background-size: cover;
+    display: block;
+    margin: 100px auto 20px;
+}
+.modal p {
+    background: #fff;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 0 5% 20px;
+    text-align: center;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -moz-transform: translate3d(0,-20px,0);
+    -ms-transform: translate3d(0,-20px,0);
+    -webkit-transform: translate3d(0,-20px,0);
+    transform: translate3d(0,-20px,0);
+}
+.modal img, .modal p {
+    max-width: 300px;
+    width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="title-name"></title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/themelist.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/zy.media.min.css"/>
+	<link rel="shortcut icon" href="../img/favicon.ico">
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="../js/remn.js"></script>
+	<script type="text/javascript" src="../js/iscroll-infinite.js"></script>
+	</head>
+	<body>
+	<div id="box1">
+		<div id="box">
+			
+			<!--内容区-->
+			<section class="video-content">
+				<div id="wrapper">
+	                <div id="scroller">
+	                	<ul class="video-recommended">
+							
+						</ul>
+	                </div>
+				</div>
+				<div class="video-content-null">没有更多内容了</div>
+			</section>
+			
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript" src="../js/zy.media.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript">
+	/*var servername ='http://www.hiplus5.com';*/
+	var servername ='http://192.168.199.114:8080';
+	var num=1;
+		 $.ajax({
+            type: 'POST',
+            url: servername+'/HJF/user2/get_subject_list.do',
+            dataType: 'JSON',
+            data:{page:1},
+            success: function(data){
+            	console.log(data)
+            	$.each(data.data.subject_list, function(index) {
+            		var oDiv=$('<li class="video-recommended-first"><div class="video-recommended-mask"></div>'+
+							'<img class="video-recommended-img" src="'+data.data.subject_list[index].subject_img_url+'"/>'+
+							'<p class="video-recommended-p">'+data.data.subject_list[index].subject_title+'</p>'+
+						'</li>')
+            		$('.video-recommended').append(oDiv)
+            	})
+            	$('.video-recommended-first').on('click',function(){
+            		var _this=$(this).index();
+            		if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+					    //alert(navigator.userAgent);  
+					  window.location.href='themeios.html?subject_id='+data.data.subject_list[_this].subject_id;
+					} else if (/(Android)/i.test(navigator.userAgent)) {
+					    //alert(navigator.userAgent); 
+					    window.location.href='theme.html?subject_id='+data.data.subject_list[_this].subject_id;
+					} else {
+					    
+					};
+            	})
+            },
+            error: function(xhr, type){
+                layer.msg('系统繁忙');
+            }
+        });
+        
+            $(window).scroll(function() {
+                if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                   $.ajax({
+			            type: 'POST',
+			             url: 'http://www.hiplus5.com/HJF/user2/get_subject_list.do',
+			            dataType: 'JSON',
+			            data:{page:++num},
+			            success: function(data){
+			            	console.log(data)
+			            	$.each(data.data.subject_list, function(index) {
+			            		var oDiv=$('<li class="video-recommended-first"><div class="video-recommended-mask"></div>'+
+										'<img class="video-recommended-img" src="'+data.data.subject_list[index].subject_img_url+'"/>'+
+										'<p class="video-recommended-p">'+data.data.subject_list[index].subject_title+'</p>'+
+									'</li>')
+			            		$('.video-recommended').append(oDiv)
+			            	})
+			            	$('.video-recommended-first').on('click',function(){
+			            		var _this=$(this).index()-1;
+			            		console.log(_this)
+			            		if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+									    //alert(navigator.userAgent);  
+									  window.location.href='themeios.html?subject_id='+data.data.subject_list[_this].subject_id;
+									} else if (/(Android)/i.test(navigator.userAgent)) {
+									    //alert(navigator.userAgent); 
+									    window.location.href='theme.html?subject_id='+data.data.subject_list[_this].subject_id;
+									} else {
+									    
+								 };
+			            	})
+			            },
+			            error: function(xhr, type){
+			                layer.msg('系统繁忙');
+			               
+			            }
+			        });
+                }
+            });
+           
+	</script>
+</html>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+body,html{height: 100%;background: #262628;}
+.pull-right{float: right;}
+.pull-left{float: left;}
+@font-face {
+   font-family: 'myface';
+   src: url('SignPainter.otf'); 
+} 
+#box1{width: 7rem;margin: 0 auto;display: none;}
+#box{height: 100%;display: -webkit-box;-webkit-box-orient: vertical;background: #262628;}
+/*头部区*/
+.today-head{height: 1rem;background: url(../img/footbg.png) no-repeat;background-size: cover;position: fixed;top: 0;width: 7rem;overflow: hidden;z-index: 999;}
+.today-head-img{background: url(../img/hibg.png) no-repeat;background-size: contain;border-radius: 0.2rem;float: left;height: 0.8rem;width: 0.8rem;margin-left: 0.2rem;margin-top: 0.1rem;}
+.today-head p:nth-of-type(1){font-size: 0.26rem;color: #FFFFFF;float: left;padding-left: 1.6rem;padding-top: 0.37rem;}
+.today-head .icon{color: #FFFFFF;font-size: 0.26rem;float: right;margin:0.24rem 0.2rem 0 0;padding: 0.1rem;border-radius: 0.1rem;background: #c30d23;}
+/*内容区*/
+.today-content{-webkit-box-flex: 1;height: 100%;width: 7rem;position: absolute;top: 1rem;bottom: 1.2rem;}
+.today-cont{}
+.today-top-head{height: 0.7rem;background: #262628;position: relative;}
+.today-top-head h2{text-align: center;padding: 0.15rem 0.10rem 0;color: #a0a0a2;font-size: 0.30rem;font-weight: normal;font-family: "myface";letter-spacing: 0.03rem;}
+.today-top-head div{position:absolute;width: 0.12rem;top:0.34rem;height: 0.20rem;background: url(../img/line.png) repeat-x;}
+.today-top-head div:nth-of-type(1){left: 2.85rem;}
+.today-top-head div:nth-of-type(2){right: 2.85rem;}
+.today-top-content{position: relative;}
+.today-top-content img{width: 7rem;height: 3.5rem;}
+.today-top-content p{position: absolute;color: #ffffff;}
+.today-top-content p:nth-of-type(1){top: 50%;font-size: 0.3rem;-webkit-transform: translateY(-0.4rem);transform: translateY(-0.4rem); font-weight: bold;width:100%;text-align: center;}
+.today-top-content p:nth-of-type(2){top: 50%;font-size: 0.26rem;width: 100%;text-align: center;-webkit-transform: translateY(0.2rem);transform: translateY(0.2rem);}
+.today-foot-head{height: 0.70rem;background: #262628;position: relative;}
+.today-foot-head h2{letter-spacing: 0.03rem;text-align: center;padding: 0.25rem 0.10rem 0;color: #a0a0a2;font-size: 0.3rem;font-weight: normal;font-family: "myface";}
+.today-foot-head div{position:absolute;width: 0.12rem;top:0.35rem;height: 0.20rem;background: url(../img/line.png) repeat-x;}
+.today-foot-head div:nth-of-type(1){left:2.85rem;}
+.today-foot-head div:nth-of-type(2){right: 2.85rem;}
+.today-mask{
+	position: absolute;
+	background: black;
+	width: 7rem;
+	height: 3.5rem;
+	top: 0;
+	opacity: 0.4;
+}
+.footer-top{font-size: 0.2rem;color: #FFFFFF;text-align: center;padding-top: 0.2rem;}
+.footer-img{width: 1rem;height: 1rem;background: url(../img/hibg.png) no-repeat;background-size: cover;border-radius: 0.1rem;margin: 0.6rem auto;}
+.footer-phone{padding:0rem 0 0.8rem 0;}
+.footer-phone img{float: left;width: 1.5rem;}
+.footer-phone img:nth-of-type(1){padding:0 0.4rem 0 1.8rem;}
+.foot{
+	padding: 0.25rem 0.2rem;
+}
+.foot p{
+	font-size: 0.3rem;
+	color: #FFFFFF;
+	text-align: center;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	border-radius: 0.1rem;
+	width: 6.6rem;
+	background: #3d3c41;
+}

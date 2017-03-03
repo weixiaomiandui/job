@@ -1,0 +1,60 @@
+@charset "utf-8";
+body,html{height: 100%;background: #333333;}
+.pull-right{float: right;}
+.pull-left{float: left;}
+#box1{width: 7rem;margin: 0 auto;height: 100%;}
+#box{height: 100%;display: -webkit-box;-webkit-box-orient: vertical;background: #262628;}
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+
+/*内容区*/
+.video-content{
+	-webkit-box-flex: 1;
+	background: #262628;
+	height: auto;
+	position: absolute;
+	top:0;
+	width: 7rem;
+	overflow: hidden;
+	}
+.video-recommended-first img{
+	width: 7rem;
+	height: 2.5rem;
+}
+.video-recommended-first{
+	position: relative;
+	width: 7rem;
+	height: 2.5rem;
+	background: url(../img/defaultImg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.video-recommended-p{
+	height: 0.6rem;
+	position: absolute;
+	top: 50%;
+	margin-top: -0.3rem;
+	line-height: 0.6rem;
+	font-size: 0.4rem;
+	color: #FFFFFF;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+}
+.video-recommended-mask{
+	position: absolute;
+	top: 0;
+	width: 7rem;
+	height: 2.5rem;
+	background: black;
+	opacity: 0.4;
+}
+.video-content-null{
+	font-size: 0.3rem;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 0.4rem 0;
+}
+
+
+
+
