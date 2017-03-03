@@ -1,0 +1,5 @@
+<view class="container">
+    <view wx:for="{{discount}}">
+        <view class="privilege-item" bindtap="seeDetail"  wx:key="id" data-id="{{item.id}}">{{item.title}}</view>
+    </view>
+</view>

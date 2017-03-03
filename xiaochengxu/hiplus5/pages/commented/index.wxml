@@ -1,0 +1,46 @@
+<view class="container">
+     
+      <view class="commented">
+          <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+            <view class="comment-list">
+                  <block wx:for="{{comment_list}}" wx:for-index="idx">
+                  <view class="comment-list-item">
+                        <view class="comment-list-head"><image src="{{item.user_head_img_url}}"/></view>
+                        <view class="comment-list-cont">
+                              <view class="comment-list-name">{{item.user_name}}</view>
+                              <view class="comment-list-time">{{comment_list[idx].comment_time}}</view>
+                              <view class="comment-list-content">{{comment_list[idx].comment_content}}</view>
+                        </view>
+                        <view wx:if="{{comment_list[idx].comment_is_laud==0}}" data-laud="{{item.comment_is_laud}}" data-index="{{idx}}"  id="{{item.comment_id}}" class="comment-list-zan" bindtap="commentzan">
+                        <image src="../../images/zan.png"/>
+                        <text>{{comment_list[idx].comment_laud_num}}</text>
+                        <navigator class="commentzan-arrow"  url="../detail/index?id={{item.video_id}}">
+                        <image  src="../../images/arrow.png"/></navigator>
+                        </view>
+                              <view wx:elif="{{comment_list[idx].comment_is_laud==1}}" bindtap="commentzan" data-laud="{{item.comment_is_laud}}" data-index="{{idx}}"  id="{{item.comment_id}}" class="comment-list-zan">
+                              <image  src="../../images/yizan.png"/>
+                              <text>{{comment_list[idx].comment_laud_num}}</text>
+                              <navigator class="commentzan-arrow"  url="../detail/index?id={{item.video_id}}"><image  src="../../images/arrow.png"/></navigator>
+                              </view>
+                  </view>
+                  </block>
+                  <view class="comment-list-null" >无更多内容</view>
+            </view>
+         </scroll-view>
+    </view>
+    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+

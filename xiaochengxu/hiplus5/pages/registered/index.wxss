@@ -1,0 +1,54 @@
+page{
+  background-color:#262628; 
+}
+.registered-top{
+  margin: 100rpx 175rpx 0;
+}
+.numInput{
+  width: 400rpx;
+  color: #fff;
+  background: #656565;
+  padding-left: 10rpx;
+}
+.registered-middle{
+  margin: 30rpx 175rpx 0;
+  display: flex;
+}
+.nuMMessage{
+  flex: 1;
+  width: 200rpx;
+  color: #fff;
+  background: #656565;
+  padding-left: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.message-butoon{
+  flex: 1;
+  font-size: 30rpx;
+  color: #fff;
+  height: 70rpx;
+  background: red;
+  margin-left: 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+input {
+display:block;
+height:70rpx;
+text-overflow:clip;
+overflow:hidden;
+white-space:nowrap;
+font-family:UICTFontTextStyleBody;
+min-height:1.4rem;
+}
+.determine-button{
+  margin: 500rpx 175rpx 0;
+  height: 70rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: red;
+  width: 400rpx;
+  text-align: center;
+  line-height: 70rpx;
+}

@@ -1,0 +1,60 @@
+.today{
+    background-color: #333333;
+}
+.today-title{
+    font-size: 28rpx;
+    color: #ffffff;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.today-list-item{
+    height: 400rpx;
+    position: relative;
+}
+.today-list-item image{
+    height: 400rpx;
+    width: 100%;
+}
+.today-recomment-mask{
+     height: 400rpx;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 0.2; 
+}
+.today-list-common{
+     position: absolute;
+    color: #ffffff;
+    text-align: center;
+    top: 50%;
+     width: 100%;
+}
+.today-list-name{
+   font-size: 28rpx;
+   font-weight: bold;
+   -webkit-transform: translateY(-48rpx);
+    transform: translateY(-48rpx); 
+}
+.today-list-dec{
+    font-size: 28rpx;
+  -webkit-transform: translateY(24rpx);
+    transform: translateY(24rpx); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

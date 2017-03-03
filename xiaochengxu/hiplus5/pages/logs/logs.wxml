@@ -1,0 +1,44 @@
+<view class="container">
+   
+   <view class="user">
+      <view class="user-top">
+          <navigator class="user-top-collect" url="../collect/index"> 
+               <image class="user-top-collect-img" src="../../images/shou.png" />
+               <view class="user-top-collect-save">我的收藏</view>
+          </navigator>
+          <view wx:if="{{userinf==''}}" class="user-top-name">
+               <image class="user-top-name-img" src="{{}}" />
+               <view class="user-top-name-save">点击登录后可评论</view>
+          </view>
+          <view wx:else class="user-top-name">
+                <image class="user-top-name-img" src="{{userInfo.avatarUrl}}" />
+               <view class="user-top-name-save"><text>{{userInfo.nickName}}</text></view>
+          </view>
+          <navigator class="user-top-comment" url="../commented/index">
+              <image class="user-top-collect-img" src="../../images/pinglun.png" />
+               <view class="user-top-collect-save">我的评论</view>
+          </navigator>
+      </view>
+      <navigator class="user-focus"  url="../myfocus/index">我的关注</navigator>
+      <navigator  class="user-focus" url="../message/index">消息通知</navigator>
+      <navigator url="../advice/index" class="user-focus">意见反馈</navigator>
+      <navigator url="../login/index" class="user-focus">关于我们</navigator>
+   </view>
+
+</view>
+
+<loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

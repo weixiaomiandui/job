@@ -1,0 +1,40 @@
+<view class="container">
+    <view class="page-body">
+         <view class="page-body-wrapper">
+                <view class="channelvideo">
+                   <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+                     <view class="channelvideo">
+
+                      <view class="channelvideo-head">
+                          <view class="channelvideo-head-top">
+                             <view class="channelvideo-head-img"><image src="{{channelvideo[0].channel_head_img_url}}"/></view>
+                             <view wx:if="{{channel_is_followed==0}}" data-followed="{{channel_is_followed}}"    bindtap="channelFocus" class="channelvideo-head-focus"><text>加关注</text></view>
+                              <view wx:elif="{{channel_is_followed==1}}" data-followed="{{channel_is_followed}}"    bindtap="channelFocus" class="channelvideo-head-focus"><text>已关注</text></view>
+                          </view>
+                          <view class="channelvideo-head-title">{{channelvideo[0].channel_name}}</view>
+                          <view class="channelvideo-head-summary">{{channelvideo[0].channel_summary}}</view>
+                      </view>
+                      <block wx:for="{{channelvideo}}">
+                          
+                               <view class="channelvideo-list-item">
+                                    <navigator url="../detail/index?id={{item.video_id}}">
+                                        <image src="{{item.video_img_url}}"/>
+                                    <view class="today-recomment-mask"></view>
+                                    </navigator>
+                                    <view class="channelvideo-list-name channelvideo-list-common">
+                                        {{item.video_title}}
+                                    </view>
+                                    <view class="channelvideo-list-dec channelvideo-list-common">
+                                        {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                                    </view>
+                                </view>
+                            
+                        </block>
+                      </view>
+                    </scroll-view>
+                 </view>
+         </view>
+    </view>
+     
+     <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+</view>

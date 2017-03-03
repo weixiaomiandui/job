@@ -1,0 +1,300 @@
+/**index.wxss**/
+.today-list-title{
+   text-align: center;
+   height: 80rpx;
+   line-height: 80rpx;
+   font-size:32rpx; 
+   color:#333333; 
+}
+.today-list_box{
+    height: 100%;
+}
+.today-list-list{
+   height: 100%;
+   width: 100%;
+}
+.today-list-item{
+   height: 400rpx;
+    width: 100%;
+   position: relative;
+}
+.today-list-mask{
+     height: 400rpx;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 0.2; 
+}
+.today-list-item image{
+    width: 100%;
+    height: 400rpx;
+}
+.today-list-common{
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    top: 50%;
+     width: 100%;
+}
+.today-list-name{
+   font-size: 28rpx;
+   font-weight: bold;
+   -webkit-transform: translateY(-48rpx);
+    transform: translateY(-48rpx); 
+}
+.today-list-dec{
+   font-size: 28rpx;
+  -webkit-transform: translateY(24rpx);
+    transform: translateY(24rpx); 
+}
+.today-list-more{
+    height: 80rpx;
+    background-color: #3d3c41;
+    font-size: 24rpx;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+   
+}
+.today-listmore{
+     line-height: 80rpx;
+     flex: 3;
+     text-align: right;
+}
+.today-arrow{
+    flex: 2;
+}
+.today-arrow image{
+    margin: 20rpx 0 0 20rpx;
+    height: 40rpx;
+    width: 40rpx;
+    
+}
+.today-wonderful{
+    background-color: #333333;
+}
+.today-wonderful-title{
+    font-size: 24rpx;
+    color: #ffffff;
+    text-align: center;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.today-wonderful image{
+    height: 400rpx;
+    width: 100%;
+}
+.today-recomment{
+    background-color: #3d3c41;
+}
+
+.today-recomment-title{
+    text-align: center;
+}
+.recomment-title1{
+    padding-top: 16rpx;
+    font-size: 24rpx;
+    color: #ffffff;
+    
+}
+.recomment-title2{
+    font-size: 24rpx;
+    color: #ffffff;
+    padding: 10rpx 0 16rpx 0;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 480rpx;
+  
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 640rpx;
+  height: 480rpx;
+}
+.today-recomment-item{
+    position: relative;
+    margin: 0 10rpx;
+}
+.today-recomment-mask{
+     height: 400rpx;
+    width: 640rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 0.2; 
+}
+.today-recomment-common{
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    top: 42%;
+     width: 100%;
+}
+.today-recomment-name{
+    font-size: 28rpx;
+   font-weight: bold;
+   -webkit-transform: translateY(-52rpx);
+    transform: translateY(-52rpx); 
+}
+.today-recomment-dec{
+  font-size: 28rpx;
+   -webkit-transform: translateY(24rpx);
+    transform: translateY(24rpx); 
+}
+.today-recomment-item image{
+    height: 400rpx;
+}
+.today-recomment-head{
+    height: 60rpx;
+    display: flex;
+}
+.today-recomment-head-img{
+    text-align: right;
+   flex:1;
+}
+.today-recomment-head-img image{
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 50%;
+}
+.today-recomment-head-title{
+    flex: 1;
+     text-align: left;
+    padding-left: 40rpx;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    color: #ffffff;
+}
+.today-wonderful-all{
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    color: #ffffff;
+   background-color: #3d3c41;
+   display: flex;
+    flex-direction: row;
+}
+.today-wonderful-all-title{
+     line-height: 80rpx;
+     flex: 3;
+     text-align: right;
+}
+.today-wonderful-all-arrow{
+    flex: 2;
+}
+.today-wonderful-all-arrow image{
+    margin: 22rpx 0 0 20rpx;
+    height: 40rpx;
+    width: 40rpx;
+    
+}
+.today-game{
+    background-color: #333333;
+}
+.today-game-category{
+    font-size: 28rpx;
+    color: #ffffff;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+}
+.today-game-item{
+    position: relative;
+}
+.today-game-item image{
+    height: 160rpx;
+    width: 94%;
+    margin: 2px 3%;
+    border-radius: 20rpx 20rpx;
+}
+.today-game-title{
+    position: absolute;
+    top: 50%;
+    height: 40rpx;
+    margin-top: -20rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+}
+
+.channel{
+     background-color: #3d3c41;
+}
+.channel-name{
+    display: flex;
+    flex-direction: row;
+    height: 120rpx;
+}
+.channel-head{
+    text-align: center;
+   flex: 1;
+}
+.channel-head image{
+    margin-top: 20rpx;
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 50%;
+}
+.channel-title{
+    flex: 3;
+    
+}
+.channel-focus{
+    flex: 1;
+    line-height: 120rpx;
+    
+}
+.channel-focus text{
+    text-align: center;
+    font-size: 24rpx;
+    color: #ffffff;
+    padding: 16rpx;
+    border: 1px solid red;
+    border-radius: 8rpx;
+    margin-left: 30rpx;
+}
+.channel-title-top{
+    margin-top: 16rpx;
+    display: flex;
+    flex-direction: row;
+    height: 40rpx;
+    width: 400rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-bottom{
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 550rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-top-name{
+    flex: 8;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-arrow{
+    text-align: right;
+    flex: 1;
+}
+.channel-title-arrow image{
+   height: 40rpx;
+   width: 40rpx;
+}
+

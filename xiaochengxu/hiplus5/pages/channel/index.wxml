@@ -1,0 +1,94 @@
+<view class="container" wx:if="{{logeShow}}">
+    <view class="page-body">
+         <view class="page-body-wrapper">
+                <view class="channelvideo">
+                   <scroll-view scroll-y="true" >
+                        <view class="channel">
+                                <view class="channel-all">热门频道</view>
+                                 <block  wx:for="{{hot_list}}" wx:for-index="idx">
+                                    <view class="channel-list">
+                                            <view class="channel-name">
+                                            <view class="channel-head"><image src="{{item.channel_head_img_url}}"/></view>
+                                            <view class="channel-title">
+                                                <view class="channel-title-top">
+                                                    <view class="channel-title-top-name">{{item.channel_name}}</view>
+                                                    <navigator url="../channelvideo/index?channel_id={{item.channel_id}}&channel_name={{item.channel_name}}">
+                                                        <view class="channel-title-arrow"><image  src="../../images/arrow.png"/></view>
+                                                    </navigator>
+                                                </view>
+                                                <view class="channel-title-bottom">{{item.channel_summary}}</view>
+                                            </view>
+                                            <view wx:if="{{hot_list[idx].channel_is_followed==0}}" data-followed="{{item.channel_is_followed}}" data-index="{{idx}}"  id="{{item.channel_id}}" bindtap="hotChannelFocus" class="channel-focus"><text>加关注</text></view>
+                                            <view wx:elif="{{hot_list[idx].channel_is_followed==1}}" data-followed="{{item.channel_is_followed}}" data-index="{{idx}}"  id="{{item.channel_id}}" bindtap="hotChannelFocus" class="channel-focus1"><text>已关注</text></view>
+                                        </view>
+                                    </view>
+                                    
+                                </block>
+                                <view class="channel-all">最新更新频道</view>
+                                <block  wx:for="{{recent_list}}" wx:for-index="idx">
+                                    <view class="channel-list">
+                                            <view class="channel-name">
+                                            <view class="channel-head"><image src="{{item.channel_head_img_url}}"/></view>
+                                            <view class="channel-title">
+                                                <view class="channel-title-top">
+                                                    <view class="channel-title-top-name">{{item.channel_name}}</view>
+                                                    <navigator url="../channelvideo/index?channel_id={{item.channel_id}}&channel_name={{item.channel_name}}">
+                                                        <view class="channel-title-arrow"><image  src="../../images/arrow.png"/></view>
+                                                    </navigator>
+                                                </view>
+                                                <view class="channel-title-bottom">{{item.channel_summary}}</view>
+                                            </view>
+                                            <view wx:if="{{recent_list[idx].channel_is_followed==0}}" data-followed="{{item.channel_is_followed}}" data-index="{{idx}}"  id="{{item.channel_id}}" bindtap="newChannelFocus" class="channel-focus"><text>加关注</text></view>
+                                            <view wx:elif="{{recent_list[idx].channel_is_followed==1}}" data-followed="{{item.channel_is_followed}}" data-index="{{idx}}"  id="{{item.channel_id}}" bindtap="newChannelFocus" class="channel-focus1"><text>已关注</text></view>
+                                        </view>
+                                        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+                                                <block wx:for="{{item.video_list}}">
+                                                <view class="today-recomment-item scroll-view-item_H">
+                                                    <navigator url="../detail/index?id={{item.video_id}}">
+                                                        <image src="{{item.video_img_url}}"/>
+                                                    <view class="today-recomment-mask"></view>
+                                                    </navigator>
+                                                    <view class="today-recomment-name today-recomment-common">
+                                                        {{item.video_title}}
+                                                    </view>
+                                                    <view class="today-recomment-dec today-recomment-common">
+                                                        {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                                                    </view>
+                                                </view>
+                                            </block>
+                                        </scroll-view>
+                                    </view>
+                                    
+                                </block>
+                                <view class="channel-all">全部频道</view>
+                                <block  wx:for="{{channellist}}" wx:for-index="idx">
+                                <view class="channel-list">
+                                        <view class="channel-name">
+                                        <view class="channel-head"><image src="{{item.channel_head_img_url}}"/></view>
+                                        <view class="channel-title">
+                                            <view class="channel-title-top">
+                                                <view class="channel-title-top-name">{{item.channel_name}}</view>
+                                                <navigator url="../channelvideo/index?channel_id={{item.channel_id}}&channel_name={{item.channel_name}}">
+                                                    <view class="channel-title-arrow"><image  src="../../images/arrow.png"/></view>
+                                                </navigator>
+                                            </view>
+                                            <view class="channel-title-bottom">{{item.channel_summary}}</view>
+                                        </view>
+                                        <view wx:if="{{channellist[idx].channel_is_followed==0}}" data-followed="{{item.channel_is_followed}}" data-index="{{idx}}"  id="{{item.channel_id}}" bindtap="channelFocus" class="channel-focus"><text>加关注</text></view>
+                                        <view wx:elif="{{channellist[idx].channel_is_followed==1}}" data-followed="{{item.channel_is_followed}}" data-index="{{idx}}"  id="{{item.channel_id}}" bindtap="channelFocus" class="channel-focus1"><text>已关注</text></view>
+                                    </view>
+                                </view>
+                                
+                            </block>
+                        </view>
+                </scroll-view>
+                 </view>
+         </view>
+    </view>
+      
+</view>
+<loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+
+
+
+

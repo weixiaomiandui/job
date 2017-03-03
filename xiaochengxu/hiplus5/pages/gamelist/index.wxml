@@ -1,0 +1,22 @@
+<view class="container">
+      <view class="game">
+        <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+            
+                <block wx:for="{{gamelist}}">
+                    <view class="game-list-item">
+                        <navigator url="../detail/index?id={{item.video_id}}">
+                            <image src="{{item.video_img_url}}"/>
+                        </navigator>
+                        <view class="game-list-name game-list-common">
+                            {{item.video_title}}
+                        </view>
+                        <view class="game-list-dec game-list-common">
+                            {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                        </view>
+                    </view>
+                </block>
+
+        </scroll-view>
+    </view>
+    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+</view>

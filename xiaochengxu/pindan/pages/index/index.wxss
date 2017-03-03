@@ -1,0 +1,180 @@
+/**index.wxss**/
+.index-container {
+  background-color: #f2f2f2;
+}
+
+/*.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 100px;
+}*/
+
+.location-info {
+   /* Box-model */
+  height: 30px;
+  padding-left: 20px;
+  margin-bottom: 7px;
+
+  /*Typography*/
+  line-height: 30px;
+
+  /* Visual */
+  background: url(../../images/location.png) 2px no-repeat #fff;
+  border: solid #e5e5e5;
+  border-width: 1px 0;
+}
+
+.order-item {
+  margin-bottom: 7px;
+  padding: 15rpx;
+  overflow: hidden;
+  background-color: #fff;
+  border: solid #e5e5e5;
+  border-width: 1px 0;
+  position: relative;
+}
+
+.author-avatar {
+  float: left;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 10%;
+}
+
+.author-info {
+  float: left;
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.content-container {
+  clear: both;
+  overflow: hidden;
+}
+
+.content-container .content-picture {
+  float: left;
+  width: 192rpx;
+  height: 192rpx;
+}
+
+.content-container .content-text {
+  float: left;
+  width: calc(100% - 230rpx);
+  height: 192rpx;
+  margin-left: 38rpx;
+  color: #666;
+  overflow: hidden;
+}
+
+.content-text .title {
+  height: 14px;
+  margin-bottom: 22rpx;
+
+  font-size: 40rpx;
+}
+
+.content-text .content {
+  height: 140rpx;
+}
+
+.content-container .button {
+  float: left;
+  margin-top: 12rpx;
+  /*border: solid 1px #999;*/
+}
+
+.content-container .button .button-item {
+  float: left;
+  width: 235rpx;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.button-item:not(:last-child) {
+  border-right: solid 1px #ccc;
+}
+
+.button-item.thumbs-up {
+  background: url(../../images/thumbs-up.png) no-repeat 30rpx 5px;
+}
+
+.button-item.comment {
+  background: url(../../images/comment.png) no-repeat 30rpx 5px;
+}
+
+.button-item.join {
+  background: url(../../images/join.png) no-repeat 30rpx 5px;
+}
+
+.post-button {
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+
+  width: 32px;
+  height: 32px;
+  
+  /*border: solid 1px black;*/
+  background: url(../../images/post-order3.png) no-repeat;
+}
+
+.manageOrder{
+  position:absolute;
+  right:10px;
+  width:52px;
+  text-align: center;
+}
+.manageOrder .manage-img{
+  width:30px;
+  height:25px;
+}
+.manageOrder .manage-item{
+  background-color: #e5e5e5;
+  border:1px solid #ccc;
+  padding:3px 10px;
+}
+
+.QRCode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.QRCode-container .QRCode-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450rpx;
+  height: 500rpx;
+  transform: translate(-50%, -50%);
+  background-color: #f6f6f6;
+  padding: 20rpx;
+  font-size: 40rpx;
+  line-height: 50rpx;
+}
+
+.QRCde-show {
+  width: 450rpx;
+  height: 450rpx;
+}

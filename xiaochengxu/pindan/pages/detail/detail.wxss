@@ -1,0 +1,144 @@
+/* pages/detail/detail.wxss */
+.test {
+    width: 600rpx;
+    height: 300rpx;
+}
+
+.order-detail {
+    padding: 20rpx;
+}
+
+.author-avatar {
+  float: left;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 10%;
+}
+
+.author-info {
+  float: left;
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  line-height: 120%;
+}
+
+.author {
+    overflow: hidden;
+}
+
+.order-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 40rpx 0;
+    color: #555;
+}
+
+.order-content {
+    /*height: 200rpx;*/
+    margin: 40rpx 0;
+    /*border: solid 1px #999;*/
+    border-radius: 5px;
+    /*font-size: 15px;*/
+    color: #666;
+}
+
+.order-description {
+    margin: 30rpx 0;
+    color: #666;
+}
+
+.piuctures-container {
+    overflow: hidden;
+}
+
+.content-picture {
+    float: left;
+    width: 230rpx;
+    height: 230rpx;
+    margin-left: 5rpx;
+}
+
+.order-comments {
+    margin-top: 60rpx;
+}
+
+.order-comment {
+    padding-bottom: 20rpx;
+    margin: 25rpx 0 50rpx;
+}
+
+.order-comment:not(:last-child) {
+    border-bottom: solid 1px #ccc;
+}
+
+.order-comment .comment-str {
+    margin-left: 84rpx;
+}
+
+.tool-bar {
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    padding: 20rpx;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+.tool-bar .comment-input {
+    box-sizing: border-box;
+    float: left;
+    height: 100rpx;
+    width: 50%;
+    border-radius: 5px;
+    padding-left: 20rpx;
+    line-height: 100%;
+    border: solid 1px #999;
+}
+
+.tool-bar .comment-submit,
+.join-tool {
+    float: left;
+    height: 100rpx;
+    font-size: 30rpx;
+    line-height: 100rpx;
+    width: 20%;
+    margin-left: 5rpx;
+    border-radius: 5px;
+    /*border: fid 1px #4eaa4c;*/
+}
+
+.join-tool {
+    margin-left: 30rpx;
+    text-align: center;
+    background-color: #ff4400;
+    color: #fff;
+}
+
+.QRCode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.QRCode-container .QRCode-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450rpx;
+  height: 500rpx;
+  transform: translate(-50%, -50%);
+  background-color: #f6f6f6;
+  padding: 20rpx;
+  font-size: 40rpx;
+  line-height: 50rpx;
+}
+
+.QRCde-show {
+  width: 450rpx;
+  height: 450rpx;
+}

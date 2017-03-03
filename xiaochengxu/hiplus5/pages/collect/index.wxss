@@ -1,0 +1,48 @@
+page{
+    background-color: #262628;
+}
+.collect-list{
+    height: 400rpx;
+    position: relative;
+}
+.collect-list image{
+    height: 400rpx;
+    width: 100%;
+}
+
+.collect-list-common{
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    top: 50%;
+     width: 100%;
+}
+.collect-list-title{
+   font-size: 28rpx;
+   font-weight: bold;
+   -webkit-transform: translateY(-48rpx);
+    transform: translateY(-48rpx); 
+}
+.collect-list-dec{
+   font-size: 14px;
+  -webkit-transform: translateY(24rpx);
+    transform: translateY(24rpx); 
+}
+.collect-null{
+    font-size: 30rpx;
+    color: #ffffff;
+    text-align: center;
+    padding: 30rpx 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

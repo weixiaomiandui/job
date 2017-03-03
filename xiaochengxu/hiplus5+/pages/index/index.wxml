@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{logeShow==1}}">
+     
+                  <view class="today-game">
+                     <view class="today-game-list">
+                      <view class="today-game-img" style="height:310rpx;">
+                        <image src="../../images/top.jpg" />
+                      </view>
+                        <block wx:for="{{list}}">
+                                <view class="today-game-item">
+                                    <navigator style="height:250rpx;" url="../gamelist/index?id={{item.game_id}}&game_name={{item.game_name}}&game_img_url={{item.game_img_url}}&game_ch_name={{item.game_ch_name}}">
+                                        <image src="{{item.game_img_url}}" />
+                                    <view class="today-game-title">{{item.game_name}}</view>
+                                    <view class="today-game-name">{{item.game_ch_name}}</view>
+                                     </navigator>
+                                </view>
+                            </block>
+                     </view>
+                  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>

@@ -1,0 +1,30 @@
+.start {
+	height: 100%;
+}
+
+.start swiper {
+	height: 100%;
+}
+.swiper_box{
+	height: 100%;
+}
+.start image {
+	width: 100%;
+	height: 100%;
+}
+.slide-image{
+	width: 100%;
+	height: 500px;
+}
+page{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	color: #333;
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    -ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}

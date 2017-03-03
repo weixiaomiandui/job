@@ -1,0 +1,48 @@
+<view class="container">
+   
+    <scroll-view scroll-y="true">
+       <view class="themedetail">
+           <view class="themedetail-top">
+              <image src="{{subject.subject_img_url}}"/>
+              <view class="themedetail-dec">{{subject.subject_content}}</view>
+           </view>
+           <view class="themedetail-video">
+              <block wx:for="{{subject.video_list}}" wx:for-index="idx">
+                   <view class="themedetail-video-list">
+                        <view class="themedetail-video-title">{{item.video_title}}</view>
+                        <view wx:if="{{arr[idx]==0}}" class="detail-video-bg" style="background:url({{item.video_img_url}}) no-repeat;background-size:cover;"><image bindtap="videoPlay" data-index="{{idx}}" id="{{item.video_id}}" src="../../images/start.png" /></view>
+                        <video wx:elif="{{arr[idx]==1}}"  id="{{item.video_id}}"  class="detail-video" controls="false" src="{{item.video_url}}" />
+                        <view class="themedetail-video-chan">{{item.video_channel_name+' | '+item.video_label_name+' / '+item.video_time}}</view>
+                        <view class="themedetail-video-dec">{{item.video_summary}}</view>
+                       </view>
+              </block>
+              <view class="themedetail-author">
+                   <view class="themedetail-author-from">本文来自于hi+5微信公众平台</view>
+                   <view class="themedetail-author-author">文章作者:{{subject.subject_author}}</view>
+                   <view class="themedetail-author-translation">翻译:{{subject.subject_translator}}</view>
+              </view>
+           </view>
+           <view class="themedetail-comment">
+               <view class="themedetail-comment-write">写评论</view>
+               <view class="themedetail-comment-list">
+                  <block wx:for="{{comment_list}}" wx:for-index="idx">
+                    <view class="comment-list-item">
+                        <view class="comment-list-head"><image src="{{item.user_head_img_url}}"/></view>
+                        <view class="comment-list-cont">
+                            <view class="comment-list-name">{{item.user_name}}</view>
+                                <view class="comment-list-time">{{comment_list[idx].comment_time}}</view>
+                                <view class="comment-list-content">{{comment_list[idx].comment_content}}</view>
+                        </view>
+                        <view wx:if="{{comment_list[idx].comment_is_laud==0}}" data-laud="{{item.comment_is_laud}}" data-index="{{idx}}"  id="{{item.comment_id}}" class="comment-list-zan" bindtap="commentzan"><image src="../../images/zan.png"/><text>{{comment_list[idx].comment_laud_num}}</text></view>
+                            <view wx:elif="{{comment_list[idx].comment_is_laud==1}}" data-laud="{{item.comment_is_laud}}" data-index="{{idx}}"  id="{{item.comment_id}}" class="comment-list-zan" bindtap="commentzan"><image src="../../images/yizan.png"/><text>{{comment_list[idx].comment_laud_num}}</text></view>
+                    </view>
+                </block>
+                <view class="comment-list-null" >无更多内容</view>
+               </view>
+           </view>
+       </view> 
+    </scroll-view>
+   
+</view>
+
+<loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>

@@ -1,0 +1,16 @@
+<view class="container">
+  <view wx:if="{{showlog==1}}">
+     <form bindsubmit="bindFormSubmit">
+     <view class="advice">
+        <textarea rows="" cols=""  placeholder="请输入您宝贵的意见" name="textarea" placeholder-style="color:#ffffff;" />
+     </view>
+     <button class="advice-sub" form-type="submit" style="background:#262628;">
+        <text>提交</text>
+     </button>
+    </form>
+  </view>
+  <view class="advice-tijiao" wx:if="{{showlog==0}}">已提交</view>
+      <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
+                <view> 内容不能为空</view>
+        </modal>
+</view>

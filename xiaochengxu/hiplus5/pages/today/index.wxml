@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="page-body">
+         <view class="page-body-wrapper">
+                <view class="today">
+                   <scroll-view scroll-y="true" >
+                      <block wx:for="{{todaylist}}">
+                           <view class="today-title">{{'- '+item.daily_time+' -'}}</view>
+                           <block wx:for="{{item.video_list}}">
+                               <view class="today-list-item">
+                                    <navigator url="../detail/index?id={{item.video_id}}">
+                                        <image src="{{item.video_img_url}}"/>
+                                    <view class="today-recomment-mask"></view>
+                                    </navigator>
+                                    <view class="today-list-name today-list-common">
+                                        {{item.video_title}}
+                                    </view>
+                                    <view class="today-list-dec today-list-common">
+                                        {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                                    </view>
+                                </view>
+                            </block>
+                        </block>
+                    </scroll-view>
+                 </view>
+         </view>
+    </view>
+     
+     <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+</view>

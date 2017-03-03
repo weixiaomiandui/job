@@ -1,0 +1,16 @@
+<view class="container">
+     
+      <view class="collect">
+            <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+                 <block wx:for="{{subject_list}}">
+                    <view class="collect-list">
+                         <navigator url="../themedetail/index?subject_id={{item.subject_id}}&subject_title={{item.subject_title}}">
+                              <image src="{{item.subject_img_url}}"/>
+                          </navigator>
+                     </view>
+                  </block>
+             </scroll-view>
+    </view>
+    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+
+</view>

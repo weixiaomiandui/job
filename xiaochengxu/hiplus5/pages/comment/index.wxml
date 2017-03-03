@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+
+        <view class="comment">
+             
+              <view class="page-body">
+                  <view class="page-body-wrapper">
+                              <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+                                     <view class="comment-top" style="background: url({{video_img_url}}); background-size:100% 100%;">
+                                        <view class="comment-top-logo"><image src="../../images/logo.png"/></view>
+                                        <view class="comment-top-title">{{video_title}}</view>
+                                        <view class="comment-top-comment"> {{'- '+video_comment_num+'条评论 -'}}</view>
+                                        <view class="comment-top-write" bindtap="tapwrite"><text >写评论</text></view>
+                                    </view>
+                                    <view class="comment-list">
+                                        <block wx:for="{{comment_list}}" wx:for-index="idx">
+                                          <view class="comment-list-item">
+                                                <view class="comment-list-head"><image src="{{item.user_head_img_url}}"/></view>
+                                                <view class="comment-list-cont">
+                                                    <view class="comment-list-name">{{item.user_name}}</view>
+                                                     <view class="comment-list-time">{{comment_list[idx].comment_time}}</view>
+                                                      <view class="comment-list-content">{{comment_list[idx].comment_content}}</view>
+                                                </view>
+                                                <view wx:if="{{comment_list[idx].comment_is_laud==0}}" data-laud="{{item.comment_is_laud}}" data-index="{{idx}}"  id="{{item.comment_id}}" class="comment-list-zan" bindtap="commentzan"><image src="../../images/zan.png"/><text>{{comment_list[idx].comment_laud_num}}</text></view>
+                                                 <view wx:elif="{{comment_list[idx].comment_is_laud==1}}" data-laud="{{item.comment_is_laud}}" data-index="{{idx}}"  id="{{item.comment_id}}" class="comment-list-zan" bindtap="commentzan"><image src="../../images/yizan.png"/><text>{{comment_list[idx].comment_laud_num}}</text></view>
+                                          </view>
+                                        </block>
+                                        <view class="comment-list-null" >无更多内容</view>
+                                    </view>
+                               </scroll-view>
+                  </view>
+            </view>
+            <form class="page__bd" catchsubmit="formSubmit" catchreset="formReset">
+            <view wx:if="{{textvalue==0}}" class="comment-foot" style="display:none">
+                <view class="comment-foot-top">
+                    <view class="comment-foot-top-cancle" bindtap="keybord"><image src="../../images/x.png"/></view>
+                    <view class="comment-foot-top-pinlun">评论</view>
+                     <button class="comment-foot-top-xuanzhong" formType="submit" bindtap="commentsend"></button>
+                </view>
+                <view class="comment-foot-text">
+                   <input name="input" class="comment-foot-input" maxlength="100" focus="{{focus}}"/>
+                </view>
+            </view>
+            <view wx:elif="{{textvalue==1}}" class="comment-foot" style="display:black">
+                <view class="comment-foot-top">
+                    <view class="comment-foot-top-cancle" bindtap="keybord"><image src="../../images/x.png"/></view>
+                    <view class="comment-foot-top-pinlun">评论</view>
+                    <button style="border:0;outline:none;" class="comment-foot-top-xuanzhong" formType="submit" bindtap="sendComment"><image src="../../images/xuanzhong.png"/></button>
+                </view>
+                <view class="comment-foot-text">
+                   <input name="input" class="comment-foot-input" maxlength="100" focus="{{focus}}"/>
+                </view>
+            </view>
+            </form>
+        </view>
+        <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
+                <view> 内容不能为空</view>
+        </modal>
+          <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+</view>

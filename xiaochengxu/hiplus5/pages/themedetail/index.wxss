@@ -1,0 +1,133 @@
+/* pages/advide/index.wxss */
+page{
+    background-color: #262628;
+}
+.themedetail-top image{
+    height: 400rpx;
+    width: 100%;
+}
+.themedetail-video{
+    padding-top: 20rpx;
+}
+.themedetail-dec{
+   font-size: 26rpx;
+   color: #ffffff;
+   line-height: 36rpx;
+   padding: 40rpx 20rpx 0;
+}
+.detail-video-bg{
+    height: 420rpx;
+    width: 100%;
+    position: relative;
+}
+.detail-video-bg image{
+    height: 100rpx;
+    width: 100rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50rpx;
+    margin-left: -50rpx;
+}
+.detail-video{
+   height: 420rpx;
+   width: 100%;
+}
+.themedetail-video-list{
+    padding: 40rpx 0;
+    border-bottom: 1px solid #656565;
+}
+.themedetail-video-title{
+    font-size: 28rpx;
+    color: #ffffff;
+    padding-left: 20rpx;
+    padding-bottom: 30rpx;
+}
+.themedetail-video-chan{
+    font-size: 26rpx;
+    color: #969696;
+    padding-left: 20rpx;
+    padding-top: 30rpx;
+}
+.themedetail-video-dec{
+    font-size: 28rpx;
+    color: #ffffff;
+    line-height: 40rpx;
+    padding: 30rpx 20rpx 0;
+}
+.themedetail-author{
+    padding: 50rpx 0 50rpx 30rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    line-height: 40rpx;
+    border-bottom: 1px solid #ffffff;
+}
+.themedetail-comment-write{
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 200rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 8rpx;
+    margin: 30rpx 275rpx 80rpx 275rpx;
+}
+.comment-list-item{
+    padding-top: 40rpx;
+    display: flex;
+    flex-direction: row;
+}
+.comment-list-head{
+    flex: 1;
+    padding-top: 10rpx;
+    padding-left: 20rpx;
+}
+.comment-list-head image{
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 50%;
+}
+.comment-list-cont{
+    flex: 3;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #757575;
+}
+.comment-list-name{
+     font-size: 28rpx;
+     color: #ffffff;
+}
+.comment-list-time{
+    padding-top: 8px;
+    font-size: 28rpx;
+    color: #757575;
+}
+.comment-list-content{
+     padding-top: 8rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 500rpx;
+    line-height: 40rpx;
+    word-break:break-word;
+}
+.comment-list-zan{
+    padding-top: 20rpx;
+    flex: 1;
+     padding-bottom: 16rpx;
+    border-bottom: 1px solid #757575;
+}
+.comment-list-zan image{
+    height: 40rpx;
+    width: 40rpx;
+}
+.comment-list-zan text{
+    padding-left: 16rpx;
+    font-size: 40rpx;
+    color: #ffffff;
+}
+.comment-list-null{
+    font-size: 28rpx;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 40rpx;
+}

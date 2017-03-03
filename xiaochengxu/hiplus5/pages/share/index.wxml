@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<view class="container">
+
+     <view class="share">
+           <view class="detail-title">
+              <view wx:if="{{startPlay==0}}" class="detail-video-bg" style="background:url({{shareVideo.video_img_url}}) no-repeat;background-size:cover;"><image bindtap="videoPlay" src="../../images/start.png" /></view>
+              <video wx:elif="{{startPlay==1}}"  id="myVideo"  class="detail-video" controls="false" src="{{shareVideo.video_url}}" />
+              <view class="detail-video-title">{{shareVideo.video_title}}</view>
+              <view class="today-video-dec">
+                <text>{{shareVideo.channel_name+' | '+shareVideo.video_label_name+' / '+shareVideo.video_time}}</text>
+             </view>
+          </view>
+          <view class="share-dec">{{shareVideo.video_summary}}</view>
+          <view class="recomment">
+             <view class="recomment-top">
+                <view class="recomment-top-left">
+                 <view class="recomment-top-bg"></view>
+                </view>
+                 <view class="recomment-top-right">精彩视频推荐</view>
+             </view>
+             <view class="recomment-content">
+                <block wx:for="{{daily_list}}">
+                   <view class="recomment-list">
+                        <view class="recomment-list-left">
+                           <image src="{{item.video_img_url}}" />
+                        </view>
+                        <view class="recomment-list-right">
+                            <view class="recomment-list-name">
+                                {{item.video_title}}
+                            </view>
+                            <view class="recomment-list-dec">
+                                {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                            </view>
+                        </view>
+                   </view>
+                </block>
+             </view>
+             <view class="hot">
+               
+               <view class="recomment-top">
+                 <view class="recomment-top-left">
+                    <view class="recomment-top-bg"></view>
+                </view>
+                 <view class="recomment-top-right">热门评论</view>
+               </view>
+               <view class="hot-comment">
+                    <block wx:for="{{comment_list}}" wx:if="{{comment_list.length>0}}">
+                      <view class="hot-list">
+                         <view class="hot-comment-left"><image src="{{comment_list[index].user_head_img_url}}" /></view>
+                         <view class="hot-comment-right">
+                             <view class="comment-right-left">
+                                 <view class="right-left-title">{{comment_list[index].user_name}}</view>
+                                 <view class="right-left-time">{{comment_list[index].comment_time}}</view>
+                                 <view class="right-left-content">{{comment_list[index].comment_content}}</view>
+                             </view>
+                             <view class="comment-right-right">
+                                <image src="../../images/zan.png"/><text>{{comment_list[index].comment_laud_num}}</text>
+                             </view>
+                        </view>
+                      </view>
+                    </block>
+                    <view wx:if="{{comment_list.length==0}}" class="hot-comment-null">暂无评论</view>
+               </view>
+             </view>
+          </view>
+     </view>
+
+</view>

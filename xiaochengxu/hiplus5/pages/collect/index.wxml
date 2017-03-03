@@ -1,0 +1,32 @@
+<view class="container">
+     
+      <view class="collect">
+            <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+                 <block wx:for="{{video_list}}">
+                    <view class="collect-list">
+                         <navigator url="../detail/index?id={{item.video_id}}">
+                              <image src="{{item.video_img_url}}"/>
+                          </navigator>
+                        <view class="collect-list-title collect-list-common">{{item.video_title}}</view>
+                        <view class="collect-list-dec collect-list-common">{{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}</view>
+                     </view>
+                  </block>
+                  <view class="collect-null">没有更多内容</view>
+             </scroll-view>
+    </view>
+    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+

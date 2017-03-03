@@ -1,0 +1,18 @@
+<view class="container">
+     
+    <view class="registered">
+        <view class="registered-top">
+           <input class="numInput" bindinput="bindKeyInput" type="number" placeholder-style="font-size:30rpx;color:#fff;" placeholder="请输入手机号" focus="{{focus}}" /> 
+        </view>
+        <view class="registered-middle">
+             <input bindinput="bindKeyInput1" maxlength="11" class="nuMMessage" placeholder-style="font-size:30rpx;color:#fff;height:55rpx;" type="number" placeholder="手机验证码" focus="{{focus}}" />
+             <view wx:if="{{startMessage==0}}" maxlength="6" class="message-butoon" bindtap="testPhone">获取验证码</view>
+             <view wx:elif="{{startMessage==1}}" class="message-butoon">{{time}}</view>
+        </view>
+        <view bindtap="testMessage" class="determine-button">确定</view>
+    </view>
+
+</view>
+<modal class="modal" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
+      <view> {{message}}</view>
+    </modal>

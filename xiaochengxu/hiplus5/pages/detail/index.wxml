@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="detail clear">
+          <view class="detail-title">
+              <view wx:if="{{startPlay==0}}" class="detail-video-bg" style="background:url({{video.video_img_url}}) no-repeat;background-size:cover;"><image bindtap="videoPlay" src="../../images/start.png" /></view>
+              <video wx:elif="{{startPlay==1}}"  id="myVideo"  class="detail-video" controls="false" src="{{video.video_url}}" />
+              <view class="detail-video-title">{{video.video_title}}</view>
+              <view class="today-video-dec">
+                <text>{{video.channel_name+' | '+video.video_label_name+' / '+video.video_time}}</text>
+             </view>
+          </view>
+
+          <view class="detail-channel">
+            <view class="detail-channel-head">
+                 <image src="{{video.channel_head_img_url}}"/>
+            </view>
+            <view class="detail-channel-lable">
+                <view class="detail-channel-name"><text>{{video.channel_name}}</text></view>
+                <view class="detail-channel-summary"><text>{{video.channel_summary}}</text></view>
+            </view>
+            <view class="detail-channel-icon">
+              <navigator  url="../channelvideo/index?channel_id={{video.channel_id}}&channel_name={{video.channel_name}}">
+                 <image  src="../../images/arrow.png"/>
+               </navigator>
+            </view>
+          </view>
+
+          <view class="detail-video-summary"><text>{{video.video_summary}}</text></view>
+      </view>
+  </view>
+          <view class="detail-foot">
+              <view wx:if="{{collected==0}}" class="detail-foot-collect" bindtap="collected"><image src="../../images/shou.png"/><text>{{video_collect_num}}</text></view>
+              <view wx:elif="{{collected==1}}" class="detail-foot-collect" bindtap="collected"><image src="../../images/shoucang.png"/><text>{{video_collect_num}}</text></view>
+             
+              <view class="detail-foot-share" bindtap="modalTap"><image src="../../images/share.png"/><text>{{video.video_share_num}}</text></view>
+              <view class="detail-foot-pinglun" bindtap="navigateTo" url="../comment/index?video_id={{video.video_id}}&video_title={{video.video_title}}&video_img_url={{video.video_img_url}}&video_comment_num={{video.video_comment_num}}">
+                 
+                  <image src="../../images/pinglun.png"/><text>{{video.video_comment_num}}
+                  </text>
+            </view>
+          </view>
+     <loading hidden="{{loadingHidden}}">{{lodingInfo}} 加载中...</loading>
+    <modal title="Hiplus5" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel="modalChange">
+      您还没有登录去登录吧
+    </modal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

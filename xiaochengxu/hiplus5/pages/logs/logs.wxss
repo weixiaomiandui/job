@@ -1,0 +1,60 @@
+page{
+  background-color:#262628; 
+}
+.user-top{
+  display: flex;
+  flex-direction: row;
+  height: 300rpx;
+  border-bottom: 1px solid #312f2f;
+}
+.user-top-collect{
+  padding-top: 80rpx;
+  flex: 1;
+  text-align: center;
+}
+.user-top-collect-img{
+  height: 40rpx;
+  width: 40rpx;
+}
+.user-top-collect-save{
+  font-size: 28rpx;
+  color: #ffffff;
+}
+.user-top-name{
+  padding-top: 60rpx;
+  flex: 1;
+  text-align: center;
+}
+.user-top-name-save{
+  font-size: 28rpx;
+  color: #ffffff;
+  padding-top: 20rpx;
+}
+.user-top-name-save text{
+  
+}
+.user-top-name-img{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+.user-top-comment{
+  padding-top: 80rpx;
+  flex: 1;
+  text-align: center;
+}
+.user-focus{
+  font-size: 32rpx;
+  color: #ffffff;
+  text-align: center;
+  height: 140rpx;
+  line-height: 140rpx;
+}
+
+
+
+
+
+
+
+

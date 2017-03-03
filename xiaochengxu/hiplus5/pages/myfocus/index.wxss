@@ -1,0 +1,79 @@
+page{
+  background-color:#262628; 
+}
+.channel-name{
+    display: flex;
+    flex-direction: row;
+    height: 12r0px;
+    padding: 8rpx 0;
+    border-bottom: 1px solid #333333;
+}
+.channel-head{
+    text-align: center;
+   flex: 1;
+}
+.channel-head image{
+    margin-top: 10px;
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 50%;
+}
+.channel-title{
+    flex: 3;
+    
+}
+.channel-focus{
+    flex: 1;
+    line-height: 120rpx;
+    
+}
+.channel-focus text{
+    text-align: center;
+    font-size: 24rpx;
+    color: #ffffff;
+    padding: 16rpx;
+    border: 1px solid red;
+    border-radius: 8rpx;
+    margin-left: 30rpx;
+}
+.channel-title-top{
+    margin-top: 16rpx;
+    display: flex;
+    flex-direction: row;
+    height: 40rpx;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-bottom{
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-top-name{
+    flex: 6;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 400rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-arrow{
+    flex: 1;
+}
+.channel-title-arrow image{
+   height: 40rpx;
+   width: 40rpx;
+}
+.myfocus-null{
+    font-size: 30rpx;
+    color: #ffffff;
+    text-align: center;
+    padding: 30rpx 0;  
+}

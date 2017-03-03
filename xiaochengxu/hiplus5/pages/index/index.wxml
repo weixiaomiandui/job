@@ -1,0 +1,129 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{logeShow==1}}">
+     <view class="page-body">
+         <view class="page-body-wrapper">
+
+               <view class="today-list">
+                   <view class="today-list-title" bindtap="chooseLocation" >
+                      <text> 每日推荐</text> 
+                   </view>
+                   <view class="today-list_box">
+                        <view class="today-list-list">
+                            <block wx:for="{{list.daily_list}}">
+                                <view class="today-list-item">
+                                    <navigator url="../detail/index?id={{item.video_id}}">
+                                        <image src="{{item.video_img_url}}"/>
+                                     <view class="today-list-mask"></view>
+                                     </navigator>
+                                    <view class="today-list-name today-list-common">
+                                        {{item.video_title}}
+                                    </view>
+                                    <view class="today-list-dec today-list-common">
+                                        {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                                    </view>
+                                </view>
+                            </block>
+                            <view >
+                              <navigator class="today-list-more" url="../today/index">
+                                 <view class="today-listmore">查看全部今日推荐</view>
+                                 <view class="today-arrow"><image  src="../../images/arrow.png"/></view>
+                              </navigator>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                
+                <view class="today-wonderful">
+                        <view class="today-wonderful-title">
+                            <text>关注的频道</text>
+                        </view>
+                        <navigator wx:if="{{list.follow_list.length==0}}" url="../channel/index">
+                            <image src="../../images/recomment.jpg"/>
+                        </navigator>
+                        <view wx:if="{{list.follow_list.length>0}}" class="channel">
+                            
+                                <block  wx:for="{{list.follow_list}}">
+                                <view class="channel-list">
+                                        <view class="channel-name">
+                                        <view class="channel-head"><image src="{{item.channel_head_img_url}}"/></view>
+                                        <view class="channel-title">
+                                            <view class="channel-title-top">
+                                                <view class="channel-title-top-name">{{item.channel_name}}</view>
+                                                <navigator class="channel-title-arrow" url="../channelvideo/index?channel_id={{item.channel_id}}&channel_name={{item.channel_name}}">
+                                                    <image  src="../../images/arrow.png"/>
+                                                </navigator>
+                                            </view>
+                                            <view class="channel-title-bottom">{{item.channel_summary}}</view>
+                                        </view>
+                                    </view>
+                                    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%" style="height:200px;">
+                                            <block wx:for="{{item.video_list}}">
+                                            <view class="today-recomment-item scroll-view-item_H">
+                                                <navigator url="../detail/index?id={{item.video_id}}">
+                                                    <image src="{{item.video_img_url}}"/>
+                                                <view class="today-recomment-mask"></view>
+                                                </navigator>
+                                                <view class="today-recomment-name today-recomment-common">
+                                                    {{item.video_title}}
+                                                </view>
+                                                <view class="today-recomment-dec today-recomment-common">
+                                                    {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                                                </view>
+                                            </view>
+                                        </block>
+                                    </scroll-view>
+                                </view>
+                                </block>
+                                <navigator url="../channel/index" class="today-wonderful-all">
+                                    <view class="today-wonderful-all-title">查看全部频道</view>
+                                    <view class="today-wonderful-all-arrow"><image  src="../../images/arrow.png"/></view>
+                                </navigator>
+                        </view>
+                </view>
+
+                <view class="today-recomment">
+                    <view class="today-recomment-title">
+                       <view class="recomment-title1">频道选荐</view>
+                        <view class="recomment-title2">有编辑推荐的优质频道</view>
+                    </view>
+                    <view class="today-recomment-box">
+                        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+                             <block wx:for="{{list.wonderful_list}}">
+                                <view class="today-recomment-item scroll-view-item_H">
+                                    <navigator url="../detail/index?id={{item.video_data.video_id}}">
+                                        <image src="{{item.video_data.video_img_url}}"/>
+                                    <view class="today-recomment-mask"></view>
+                                    </navigator>
+                                    <view class="today-recomment-name today-recomment-common">
+                                        {{item.video_data.video_title}}
+                                    </view>
+                                    <view class="today-recomment-dec today-recomment-common">
+                                        {{item.video_data.channel_name+' / '+item.video_data.video_label_name+' / '+item.video_data.video_time}}
+                                    </view>
+                                    <view class="today-recomment-head">
+                                       <view class="today-recomment-head-img"><image src="{{item.channel_head_img_url}}"/> </view>
+                                       <view class="today-recomment-head-title">{{item.video_data.channel_name}}</view>                                  </view>
+                                </view>
+                            </block>
+                       </scroll-view>
+                  </view>
+                </view>
+                  <view class="today-game">
+                     <view class="today-game-category"><text>游戏分类</text></view>
+                     <view class="today-game-list">
+                        <block wx:for="{{list.game_list}}">
+                                <view class="today-game-item">
+                                    <navigator url="../gamelist/index?id={{item.game_id}}&game_name={{item.game_name}}">
+                                        <image src="{{item.game_img_url}}" />
+                                    <view class="today-game-title"><text>{{item.game_name}}</text></view>
+                                     </navigator>
+                                </view>
+                            </block>
+                     </view>
+                  </view>
+         </view>
+     </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>

@@ -1,0 +1,9 @@
+page{
+  background-color:#262628; 
+}
+.message-null{
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    margin-top: 60rpx;
+}

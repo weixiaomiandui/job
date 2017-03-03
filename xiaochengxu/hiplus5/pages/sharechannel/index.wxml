@@ -1,0 +1,69 @@
+<view class="container">
+
+    <view class="sharechannel">
+       <view class="sharechannel-top" style="height:400rpx;width: 100%;background:url({{channel_list[0].channel_img_url}}) no-repeat;background-size:100% 100%">
+           <view class="sharechannel-top-img">
+                <image src="{{channel_list[0].channel_head_img_url}}"/>
+           </view>
+           <view class="sharechannel-top-title">{{channel_list[0].channel_name}}</view>
+           <view class="sharechannel-top-dec">{{channel_list[0].channel_summary}}</view>
+       </view>
+       <view class="sharechannel-list">
+           <block wx:for="{{channel_list}}" wx:for-index="index">
+                <view class="today-list-item">
+                    <navigator url="../share/index?video_id={{channel_list[index].video_id}}">
+                        <image src="{{channel_list[index].video_img_url}}"/>
+                        <view class="today-list-mask"></view>
+                        </navigator>
+                    <view class="today-list-name today-list-common">
+                        {{channel_list[index].video_title}}
+                    </view>
+                    <view class="today-list-dec today-list-common">
+                        {{channel_list[index].channel_name+' / '+channel_list[index].video_label_name+' / '+channel_list[index].video_time}}
+                    </view>
+                </view>
+            </block>
+       </view>
+        <view class="recomment">
+            <view class="recomment-top">
+            <view class="recomment-top-left">
+                <view class="recomment-top-bg"></view>
+            </view>
+                <view class="recomment-top-right">精彩视频推荐</view>
+            </view>
+            <view class="recomment-content">
+            <block wx:for="{{daily_list}}">
+                <navigator url="../share/index?video_id={{item.video_id}}" class="recomment-list">
+                    <view class="recomment-list-left">
+                        <image src="{{item.video_img_url}}" />
+                    </view>
+                    <view class="recomment-list-right">
+                        <view class="recomment-list-name">
+                            {{item.video_title}}
+                        </view>
+                        <view class="recomment-list-dec">
+                            {{item.channel_name+' / '+item.video_label_name+' / '+item.video_time}}
+                        </view>
+                    </view>
+                </navigator>
+            </block>
+            </view>
+    </view>
+   </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

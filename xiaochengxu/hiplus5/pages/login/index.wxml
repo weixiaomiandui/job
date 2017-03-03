@@ -1,0 +1,13 @@
+<view class="container">
+
+   <view class="login">
+      <view class="login-logo">
+         <image class="login-logo-img" src="../../images/logo.jpg" />
+         <view class="login-logo-title">Hiplus5</view>
+      </view>
+      <view class="login-inf">
+      Hiplus5+提供全球无广告高清游戏视频，即可零距离高清观摩电竞大神出装、操作，分享游戏精彩瞬间，为你打造一场独具一格的游戏视听体验
+      </view>
+   </view>
+
+</view>

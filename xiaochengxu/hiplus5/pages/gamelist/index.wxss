@@ -1,0 +1,29 @@
+.game-list-item{
+    height: 400rpx;
+    position: relative;
+}
+.game-list-item image{
+    height: 400rpx;
+    width: 100%;
+}
+.game-list-common{
+    position: absolute;
+    font-size: 28rpx;
+    color: #ffffff;
+    text-align: center;
+}
+.game-list-name{
+    top: 42%;
+    width: 100%;
+}
+.game-list-dec{
+   top: 57%;
+    width: 100%;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+page{
+  background-color:#262628; 
+}
+.login-logo{
+  padding-top: 60px;
+  text-align: center;
+}
+.login-logo-img{
+  vertical-align: middle;
+  height: 100px;
+  width: 100px;
+  border-radius: 10%;
+}
+.login-logo-title{
+  padding-top: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+.login-inf{
+  padding: 40px 30rpx 0;
+  font-size: 28rpx;
+  color: #ffffff;
+  line-height: 40rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+

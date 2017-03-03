@@ -1,0 +1,149 @@
+page{
+  background-color:#262628; 
+}
+.channel{
+     background-color: #3d3c41;
+}
+.channel-all{
+    font-size: 30rpx;
+    color: #ffffff;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #3d3c41;
+    padding-left: 40rpx;
+}
+.channel-name{
+    display: flex;
+    flex-direction: row;
+    height: 120rpx;
+    background: #333333;
+}
+.channel-head{
+    text-align: center;
+   flex: 1;
+}
+.channel-head image{
+    margin-top: 20rpx;
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 50%;
+}
+.channel-title{
+    flex: 2;
+    
+}
+.channel-focus{
+    flex: 1;
+    line-height: 120rpx;
+    
+}
+.channel-focus text{
+    text-align: center;
+    font-size: 24rpx;
+    color: red;
+    padding: 16rpx;
+    border: 1px solid red;
+    border-radius: 8rpx;
+    margin-left: 30rpx;
+}
+.channel-focus1{
+     flex: 1;
+    line-height: 120rpx;
+}
+.channel-focus1 text{
+    text-align: center;
+    font-size: 24rpx;
+    color: #ffffff;
+    padding: 16rpx;
+    border: 1px solid #ffffff;
+    border-radius: 8rpx;
+    margin-left: 30rpx;
+}
+.channel-title-top{
+    margin-top: 16rpx;
+    display: flex;
+    flex-direction: row;
+    height: 40rpx;
+    width: 400rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-bottom{
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 400rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-top-name{
+    flex: 2;
+    font-size: 28rpx;
+    color: #ffffff;
+    width: 300rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.channel-title-arrow{
+    flex: 1;
+}
+.channel-title-arrow image{
+   height: 40rpx;
+   width: 40rpx;
+}
+
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 400rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 640rpx;
+}
+.today-recomment-item{
+    position: relative;
+    margin: 0 20rpx;
+}
+.today-recomment-mask{
+     height: 400rpx;
+    width: 640rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 0.2; 
+}
+.today-recomment-common{
+     position: absolute;
+    color: #ffffff;
+    text-align: center;
+    top: 50%;
+     width: 100%;
+}
+.today-recomment-name{
+   font-size: 28rpx;
+   font-weight: bold;
+   -webkit-transform: translateY(-48rpx);
+    transform: translateY(-48rpx); 
+}
+.today-recomment-dec{
+    font-size: 28rpx;
+  -webkit-transform: translateY(24rpx);
+    transform: translateY(24rpx); 
+}
+.today-recomment-item image{
+    height: 400rpx;
+}
+
+
+
+
+
+
+
+
